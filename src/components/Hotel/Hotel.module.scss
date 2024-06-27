@@ -1,0 +1,203 @@
+.hotelBg {
+  background-position: center;
+  width: 100vw;
+  height: 120vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.bannerOverlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9); /* Black see-through */
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.borderColor {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.mainTitle {
+  font-weight: 400;
+  font-size: 80px;
+  color: #fff;
+}
+
+.title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.rating {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  margin-bottom: 4px;
+
+  span {
+    font-size: 26px;
+  }
+}
+
+.reviews {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.menuItem {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.15px;
+  // color: #0e1013;
+  position: relative;
+  &::before {
+    position: absolute;
+    bottom: -8px;
+    height: 3px;
+    width: 0%;
+    background-color: #3a6ea5;
+    left: 0;
+    content: '';
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover,
+  &:active {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.activeUrl {
+  @extend .menuItem;
+  &::before {
+    width: 100%;
+  }
+}
+
+.featureItem {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.aboutTitle {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.aboutText {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.aboutContactName {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.textSmall {
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 400;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.roomSize {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.sectionSubtit {
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: 400;
+}
+
+.roomCapacity {
+  font-size: 12px;
+  line-height: 14.52px;
+  font-weight: 400;
+}
+
+.highlightTitle {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.highlightPrice {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.historyCard {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.topBorder {
+  border-top: solid 1px rgb(0 0 0 / 0.1);
+}
+
+.botBorder {
+  border-bottom: solid 1px rgb(0 0 0 / 0.1);
+}
+
+.textDesc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+}
+
+.textTitleClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 1;
+}
+
+.scrollMarginTop {
+  scroll-margin-top: 136px;
+}
+
+.comment {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 3;
+}
+
+.fullComment {
+  height: fit-content;
+  max-height: 100%;
+}

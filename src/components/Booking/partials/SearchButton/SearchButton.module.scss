@@ -1,0 +1,18 @@
+.searchButton {
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  margin-top: auto;
+  &:hover {
+    background-color: #3a6ea5;
+    .searchIcon {
+      color: white;
+    }
+  }
+  .searchIcon {
+    height: 24px;
+  }
+}

@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  transition: all 0.2s;
+}
+
+.fixed {
+  position: fixed !important;
+  top: 0;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translateZ(0);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease 0s, background-color 0.2s ease 0s;
+}
+
+.hoverNav {
+  position: relative;
+  &::before {
+    transition: all 0.5s ease-in-out;
+    height: 2px;
+    width: 0%;
+    background-color: #3a6ea5;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    content: '';
+  }
+  &:hover,
+  &:active {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.accountBorder {
+  border-bottom: 1px solid #dadce0;
+}
+.accountText {
+  // color: #0e1013;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.smallText {
+  // color: #61666b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.accountTitle {
+  // color: #0e1013;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.accountDropdown {
+  z-index: 999;
+  position: absolute;
+  right: 0;
+  top: 3.7rem;
+  box-shadow: 0px 10px 32px -4px rgba(24, 39, 75, 0.384), 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+
+.linkMenu {
+  position: relative;
+  .subIcon {
+    transition: all 0.3s;
+  }
+  &:hover .subIcon {
+    color: #3a6ea5;
+  }
+  .subMenu {
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.2s;
+    visibility: hidden;
+    height: auto;
+    list-style: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+
+    li {
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'Inter';
+      line-height: 24px;
+      padding: 10px;
+    }
+  }
+
+  &:hover .subMenu {
+    visibility: visible;
+  }
+}

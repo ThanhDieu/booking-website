@@ -1,0 +1,940 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "APIs concern rate plan",
+      "title": "Orion Rate Plan APIs",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "name": "API Support",
+        "url": "http://www.swagger.io/support",
+        "email": "support@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0"
+    },
+    "host": "192.168.1.184:5032",
+    "basePath": "",
+    "paths": {
+      "/orion/v1/admin/rateplans": {
+        "get": {
+          "description": "Get rate plans",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Rate-Plan"
+          ],
+          "summary": "Get rate plans",
+          "operationId": "get-rate-plans",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "unitGroupId",
+              "name": "unitGroupId",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/cancellation-policies": {
+        "get": {
+          "description": "Get cancellation policy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "CancellationPolicy"
+          ],
+          "summary": "Get cancellation policy",
+          "operationId": "get-cancellation-policy",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "isGlobal",
+              "name": "isGlobal",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create cancellation policy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "CancellationPolicy"
+          ],
+          "summary": "Create cancellation policy",
+          "operationId": "create-cancellation-policy",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateCancellationPolicy",
+              "name": "CreateCancellationPolicy",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateCancellationPolicy"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/cancellation-policies/{id}": {
+        "get": {
+          "description": "Get cancellation policy by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "CancellationPolicy"
+          ],
+          "summary": "Get cancellation policy by id",
+          "operationId": "get-cancellation-policy-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/rate-by-day": {
+        "get": {
+          "description": "Get Rate by day",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Rate"
+          ],
+          "summary": "Get Rate by day",
+          "operationId": "get-rate-by-day",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "ratePlanId",
+              "name": "ratePlanId",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "from",
+              "name": "from",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/rates": {
+        "get": {
+          "description": "Get Rates",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Rate"
+          ],
+          "summary": "Get Rates",
+          "operationId": "get-rates",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "ratePlanIds",
+              "name": "ratePlanIds",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "from",
+              "name": "from",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "to",
+              "name": "to",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/services": {
+        "get": {
+          "description": "Get admin services",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Get admin services",
+          "operationId": "get-admin-service",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "tagIds",
+              "name": "tagIds",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "serviceType",
+              "name": "serviceType",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "name",
+              "name": "name",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "disabled",
+              "name": "disabled",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "data",
+                  "tags"
+                ],
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "expands",
+              "name": "expands",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/services/{id}": {
+        "get": {
+          "description": "Get service by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Get service by id",
+          "operationId": "get-service-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update service",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Update service",
+          "operationId": "update-service",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "UpdateService",
+              "name": "UpdateService",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateService"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/rateplans/{id}": {
+        "get": {
+          "description": "Get rate plan by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Rate-Plan"
+          ],
+          "summary": "Get rate plan by id",
+          "operationId": "get-rate-plan-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/rateplans/no-show-policies": {
+        "get": {
+          "description": "Get no show policy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "NoShowPolicy"
+          ],
+          "summary": "Get no-show policy",
+          "operationId": "get-no show-policy",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "isGlobal",
+              "name": "isGlobal",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create no-show policy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "NoShowPolicy"
+          ],
+          "summary": "Create no-show policy",
+          "operationId": "create-no-show-policy",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateNoShowPolicy",
+              "name": "CreateNoShowPolicy",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateNoShowPolicy"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/rateplans/no-show-policies/{id}": {
+        "get": {
+          "description": "Get no-show policy by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "NoShowPolicy"
+          ],
+          "summary": "Get no-show policy by id",
+          "operationId": "get-no-show-policy-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/rateplans/rates/calendar": {
+        "get": {
+          "description": "Get Rate Calendar",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Rate"
+          ],
+          "summary": "Get Rate Calendar",
+          "operationId": "get-rate-calendar",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "fromDate",
+              "name": "fromDate",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "countryCode",
+              "name": "countryCode",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "timeZone",
+              "name": "timeZone",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/rateplans/services": {
+        "get": {
+          "description": "Get services",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Get services",
+          "operationId": "get-service",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "tagIds",
+              "name": "tagIds",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "serviceType",
+              "name": "serviceType",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "name",
+              "name": "name",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "disabled",
+              "name": "disabled",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "data",
+                  "tags"
+                ],
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "expands",
+              "name": "expands",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create service",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Create service",
+          "operationId": "create-service",
+          "parameters": [
+            {
+              "description": "CreateService",
+              "name": "CreateService",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateService"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/rateplans/services/{id}": {
+        "delete": {
+          "description": "Delete service",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Service"
+          ],
+          "summary": "Delete service",
+          "operationId": "delete-service",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      }
+    },
+    "definitions": {
+      "backend.CreateCancellationPolicy": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "isGlobal": {
+            "type": "boolean"
+          },
+          "propertyId": {
+            "type": "string"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateNoShowPolicy": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "isGlobal": {
+            "type": "boolean"
+          },
+          "propertyId": {
+            "type": "string"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateService": {
+        "type": "object",
+        "required": [
+          "code",
+          "propertyId"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "popular": {
+            "type": "boolean"
+          },
+          "propertyId": {
+            "type": "string"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "backend.UpdateService": {
+        "type": "object",
+        "properties": {
+          "disabled": {
+            "type": "boolean"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "popular": {
+            "type": "boolean"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,797 @@
+{
+  "en": {
+    "resultPage": {
+      "dataNotification": "No data.",
+      "noBundle": "No bundle matched with your search, here are some recommendations",
+      "recommendations": "Our recommendations",
+      "allBundles": "All available bundles",
+      "noResult": "There are no results for your search. Showing results of nearby offers instead.",
+      "noPeopleAndContact": "There are no results matching the number of residents you requested. Please contact our staff for specification request!",
+      "filterName": {
+        "priceRange": "Price Range",
+        "landscape": "Landscape",
+        "activities": "Activities",
+        "specialOffer": "Special Offer",
+        "priceContent": {
+          "max": "Max",
+          "min": "Min"
+        }
+      },
+      "localizations": {
+        "dataNotification": "Keine Daten vorhanden."
+      }
+    },
+    "accountPage": {
+      "login": {
+        "login": "login",
+        "title": "Welcome to Sonnelhotels",
+        "zitadelText": "Sign in by Zitadel",
+        "signUpTitle": "Not a member of Sonnelhotels?"
+      },
+      "register": {
+        "signUp": "Sign Up",
+        "title": "Sign up to be a member",
+        "signInText": "Already a member?"
+      },
+      "profile": {
+        "tabTitle": ["General", "Password", "Guests together"],
+        "general": {
+          "information": {
+            "title": "Information",
+            "fullName": "Full name",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "phoneNumber": "Phone number",
+            "dateOfBirth": "Date of birth",
+            "email": "Email",
+            "address": "Address",
+            "street": "Street",
+            "postCode": "Postcode",
+            "country": "Country",
+            "selectCountry": "Select a country",
+            "location": "Location",
+            "buttonName": {
+              "edit": "Edit profile",
+              "save": "Save",
+              "discard": "Discard",
+              "editAvatar": "Edit avatar"
+            }
+          },
+          "password": {
+            "title": "Zitadel not allowed to change password",
+            "oldPassword": "Old password",
+            "newPassword": "New password",
+            "confirmPassword": "Confirm password",
+            "setPassword": "Set password"
+          },
+          "guestsTogether": {
+            "guest": "Guest",
+            "title": "Title",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "dateOfBirth": "Date of birth",
+            "buttonText": {
+              "buttonSave": "Save changes",
+              "buttonAdd": "Add new guest",
+              "buttonEdit": "Edit guest",
+              "buttonDiscard": "Discard"
+            }
+          },
+          "message": {
+            "updateProfileSuccess": "Update profile success",
+            "updateProfileFaild": "Update profile fail"
+          }
+        }
+      },
+      "yourBookingPage": {
+        "tabTitle": ["Bookings history", "Activities history"],
+        "bookingHistory": {
+          "upComing": "Up coming",
+          "history": "History",
+          "emptyHistory": "Your History is emty.",
+          "emptyActivities": "your activity history is emty.",
+          "recent": "Recent",
+          "viewDetail": "View detail",
+          "bookAgain": "Book again",
+          "duration": "Duration",
+          "guest": "Guest",
+          "adults": "adults",
+          "balance": "Balance",
+          "childs": "childs",
+          "youHave": "you have",
+          "dayLeftPayment": "day left to payment!",
+          "successfulPayment": "Your payment is successful",
+          "hotelButton": "Go to hotel",
+          "bookButton": "Book Now"
+        }
+      }
+    },
+    "general": {
+      "message": {
+        "format": "This is not correct format",
+        "required": "This field is required!",
+        "min": "Min lenght is",
+        "max": "Max lenght is",
+        "numberAndSpecialCharacters": "no number and special characters are allowed!",
+        "number": "only numbers are allowed!",
+        "readOurPolicy": "Please read our policy and check it!",
+        "doesNotMatch": "Does not match the pattern",
+        "dateValidate": "Does not match date pattern"
+      },
+      "button": {
+        "contact": "contact us",
+        "home": "Go home",
+        "cancel": "Cancel"
+      },
+      "processMenu": [
+        {
+          "step": 1,
+          "stepName": "Choose your room",
+          "slug": "result/"
+        },
+        {
+          "step": 2,
+          "stepName": "Add ons",
+          "slug": "addons"
+        },
+        {
+          "step": 3,
+          "stepName": "Personal information",
+          "slug": "booking"
+        },
+        {
+          "step": 4,
+          "stepName": "Summary",
+          "slug": "confirmation"
+        },
+        {
+          "step": 5,
+          "stepName": "Payment",
+          "slug": ""
+        }
+      ],
+      "invoice": {
+        "title": "Your Booking",
+        "list": {
+          "addOns": "Add Ons",
+          "adults": "Adults",
+          "guests": "No. of guests",
+          "nights": "Nights",
+          "children": "Children",
+          "roomType": "Room type",
+          "included": "Included"
+        },
+        "total": "Total",
+        "buttonText": "Proceed to next step",
+        "taxFee": "Inclusive of taxes and fees"
+      }
+    },
+    "bookingSteps": {
+      "step0": {
+        "perPerson": "per person",
+        "buttonText": {
+          "details": "See details"
+        }
+      },
+      "step1": {
+        "bundleDetail": {
+          "overwritePrice": "Overwrite price",
+          "buttonText": {
+            "full": "Show full details",
+            "minimize": "Minimize details"
+          },
+          "chooseYourRoom": "Choose your room"
+        },
+        "room": {
+          "only": "Only",
+          "roomLeft": "room left",
+          "perNight": "Per night",
+          "freeCancel": "Free cancellation",
+          "buttonText": "Book this room"
+        }
+      },
+      "step2": {
+        "chooseYourAddons": "Choose your addons",
+        "all": "All",
+        "buttonText": "Select",
+        "youSaved": "By purchasing addons early, you saved",
+        "noServices": "No services matched"
+      },
+      "step3": {
+        "secureBookingAlert": {
+          "title": "Your data is safe!",
+          "subtitle": "Encrypted Transactions",
+          "description": "With the encrypted connection, the data is transmitted from your computer to us securely and protected against access by third parties."
+        },
+        "giftVoucher": {
+          "title": "Have a gift voucher code?",
+          "help": "How I can get the promotional codes and coupons?",
+          "buttonText": "Apply",
+          "placeholder": "Input Vouchers"
+        },
+        "booker": {
+          "title": "Booker’s information",
+          "placeholder": {
+            "title": "Title",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "phoneNumber": " Phone Number",
+            "email": "E-mail",
+            "checkbox": "Are you booking for someone else?"
+          },
+          "primaryGuest": "Primary guest",
+          "guest": "Guest",
+          "information": "information",
+          "buttonText": {
+            "add": "add guest",
+            "descrement": "descrement guest"
+          }
+        },
+        "address": {
+          "title": "Address",
+          "placeholder": {
+            "street": "Street",
+            "postalCode": "Postal code",
+            "country": "Select a country",
+            "province": "Province"
+          }
+        },
+        "note": "Note",
+        "payment": {
+          "title": "Payment of your booking",
+          "select": {
+            "label": "Country currency",
+            "placeholder": "Select a country"
+          }
+        },
+        "acceptCheckbox": "I accept the general terms and conditions and booking conditions of the hotel.",
+        "notice": [
+          {
+            "title": "Data protection",
+            "description": "We process your data exclusively to process your inquiry or your order. Further information on handling personal data can be found in our data protection information. The data will be deleted 24 months after the departure date."
+          },
+          {
+            "title": "Cancellation policy",
+            "description": " According to Directive 2011/83/EU of the European Parliament, Article 16, the 14-day right of withdrawal does not apply to hotel bookings. The cancellation conditions of the hotel apply."
+          }
+        ],
+        "buttonText": {
+          "previous": "Previous",
+          "next": "Proceed to next step"
+        },
+        "popupBooking": {
+          "title": "Please DO NOT reload or exit this page!",
+          "description": "Initializing your booking",
+          "notFound": "Page Not Found",
+          "serverError": "Something went wrong, try again later!",
+          "sucessBooking": "Your booking is success!",
+          "sucessReservation": "Your booking is success!",
+          "getFoliostFail ": "Get folios fail"
+        }
+      },
+      "step4": {
+        "title": "Sumary",
+        "buttonText": {
+          "previous": "Previous",
+          "next": "Proceed to next step"
+        },
+        "stayInfo": {
+          "title": "Stay information",
+          "unit": {
+            "night": "night",
+            "adults": "adults",
+            "childrens": "childrens"
+          }
+        },
+        "roomsAndOffersInfo": {
+          "title": "Rooms and offers information",
+          "offersAndRooms": "Offers and rooms",
+          "addons": "Addons",
+          "included": "included",
+          "services": "Sum of hotel services",
+          "notice": "Cancellation policy: Until December 22, 2023: 90% of the travel price",
+          "buttonText": "Process to payment"
+        },
+        "popupBooking": {
+          "title": "Payment",
+          "bookingId": "Booking ID",
+          "balance": "Balance",
+          "description": "you need to pay all to next",
+          "fail": "payment fail!",
+          "serverError": "Something went wrong, try again later!",
+          "sucessPayment": "Your payment is success!",
+          "payMessage": "You need to pay!",
+          "CannotPayMore": "Cannot pay more than the open balance",
+          "getLinkFail": "get payment link failed",
+          "buttonText": {
+            "payment": "Payment",
+            "next": "Next",
+            "retry": "Retry"
+          }
+        }
+      }
+    },
+    "thankYouPage": {
+      "title": "Thank you for booking",
+      "content": {
+        "bookingID": "Booking ID",
+        "email": "We sent the detail to email",
+        "download": "Additionally, you can download your invoice for your records"
+      },
+      "buttonText": {
+        "download": "Download invoice",
+        "home": "Go home",
+        "contact": "contact us"
+      },
+      "help": "If you have any issues"
+    },
+    "contactPage": {
+      "title": "Get in touch",
+      "content": [
+        "Dear guests, would you like to switch off and let yourself be pampered? Do you have any questions about our sunny hotels? Would you like to make your partner or relatives happy? You just want to enjoy the landscape and let your soul dangle for a few days? Then you are exactly right here. No matter which sun hotel or resort you would like to travel to, we will work with you to choose your well-deserved holiday.",
+        "We look forward to your call. Your employees at the Sonnenhotels central reservation."
+      ],
+      "contactInfo": {
+        "title": "Contact information",
+        "phoneNumber": "+49 5321 68 55 40",
+        "email": "info@sonnenhotels.de",
+        "openWork": ["Mon - Fri: 8 AM - 8 PM", "Sat Sun & public holidays: 9 AM - 6 PM"]
+      },
+      "contactForm": {
+        "personalInfo": "Personal information",
+        "travelData": "Travel data",
+        "note": "Note",
+        "sunHotel": "Sun hotel",
+        "buttonText": {
+          "addHotel": "Add alternative sun hotel",
+          "submit": "Submit",
+          "ok": "OK"
+        },
+        "placeholder": {
+          "name": "Your name",
+          "email": "Your email",
+          "hotel": "Please select hotel",
+          "guest": "Guests",
+          "arriveDate": "Arrive Date",
+          "departureDate": "Departure Date"
+        },
+        "popupSuccess": {
+          "title": "Your form has been submitted",
+          "description": "We will get in touch with you soon!"
+        }
+      }
+    },
+    "searchMenu": {
+      "location": {
+        "title": "Choose a location / hotel",
+        "placeholder": "Where would you liki to go?"
+      },
+      "calendar": {
+        "title": "Travel Dates",
+        "arrivalPlaceHolder": "Arrival",
+        "departurePlaceHolder": "Departure",
+        "calendarDescription": "Based on average price room prices",
+        "calendarLow": "low",
+        "calendarNormal": "normal",
+        "calendarHigh": "high"
+      },
+      "guestAndRoom": {
+        "title": "Guests & Rooms",
+        "room": "Rooms",
+        "guest": "Guests",
+        "adults": "Adults",
+        "children": "Children",
+        "years": "Years",
+        "guestAge": "Ages 18 or above",
+        "childrenAge": "Ages 0 - 17"
+      }
+    },
+    "banner": {
+      "holidayPackages": "Holiday Packages",
+      "welcome": "Welcome"
+    },
+    "errorPage": {
+      "notFound": {
+        "type": "Not Found",
+        "message": "The page you are looking for is not found on Sonnenhotels"
+      }
+    }
+  },
+  "de": {
+    "resultPage": {
+      "dataNotification": "Keine Daten vorhanden.",
+      "noBundle": "Kein Angebot passt zu ihrer Suche, hier sind einige Vorschläge",
+      "allBundles": "Alle Pakete verfügbar",
+      "recommendations": "Unsere Empfehlungen",
+      "noResult": "Keine Ergebnisse zu ihrer Suche. Es werden Angebote in der Nähe angezeigt",
+      "noPeopleAndContact": "Es gibt keine Ergebnisse, die der von Ihnen angeforderten Einwohnerzahl entsprechen. Für Spezifikationsanfragen wenden Sie sich bitte an unsere Mitarbeiter!",
+      "filterName": {
+        "priceRange": "Preisspanne",
+        "landscape": "Landschaft",
+        "activities": "Aktivitäten",
+        "specialOffer": "Besondere Angebote",
+        "priceContent": {
+          "max": "Max",
+          "min": "Min"
+        }
+      },
+      "localizations": {
+        "dataNotification": "Keine Daten vorhanden."
+      }
+    },
+    "accountPage": {
+      "login": {
+        "login": "Login",
+        "title": "Willkommen bei den Sonnenhotels",
+        "zitadelText": "Anmelden mit Zitadel",
+        "signUpTitle": "Noch kein Mitglied der Sonnenhotels?"
+      },
+      "register": {
+        "signUp": "Registrieren",
+        "title": "Restrierung zum Mitglied",
+        "signInText": "Bereits Mitglied?"
+      },
+      "profile": {
+        "tabTitle": ["Allgemein", "Passwort", "Mitreisende"],
+        "general": {
+          "information": {
+            "title": "Information",
+            "fullName": "Vollständiger Name",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "phoneNumber": "Telefonnummer",
+            "dateOfBirth": "Geburtsdatum",
+            "email": "Email",
+            "address": "Adresse",
+            "street": "Straße",
+            "postCode": "Postleitzahl",
+            "country": "Land",
+            "selectCountry": "Wählen Sie ein Land",
+            "location": "Standort",
+            "buttonName": {
+              "edit": "Profil bearbeiten",
+              "save": "Speichern",
+              "discard": "Verwerfen",
+              "editAvatar": "Profilbild bearbeiten"
+            }
+          },
+          "password": {
+            "title": "Zitadel hat nicht die Erlaubnis das Passwort zu ändern",
+            "oldPassword": "Altes Passwort",
+            "newPassword": "Neues Passwort",
+            "confirmPassword": "Passwort bestätigen",
+            "setPassword": "Passwort einrichten"
+          },
+          "guestsTogether": {
+            "guest": "Gast",
+            "title": "Titel",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "dateOfBirth": "Geburtsname",
+            "buttonText": {
+              "buttonSave": "Änderungen speichern",
+              "buttonAdd": "Gast hinzufügen",
+              "buttonEdit": "Gast bearbeiten",
+              "buttonDiscard": "Verwerfen"
+            },
+            "message": {
+              "updateProfileSuccess": "Profilaktualisierung erfolgreich",
+              "updateProfileFaild": "Profilaktualisierung fehlgeschlagen"
+            }
+          }
+        }
+      },
+      "yourBookingPage": {
+        "tabTitle": ["Buchungshistorie", "Aktivitätenhistorie"],
+        "bookingHistory": {
+          "upComing": "Bevorstehend",
+          "history": "Historie",
+          "emptyHistory": "Noch keine Buchungen vorhanden",
+          "emptyActivities": "Noch keine Aktivitäten vorhanden",
+          "recent": "Kürzlich",
+          "viewDetail": "Details anzeigen",
+          "bookAgain": "Erneut buchen",
+          "duration": "Dauer",
+          "guest": "Gast",
+          "adults": "Erwachsene",
+          "balance": "Guthaben",
+          "childs": "Kinder",
+          "youHave": "sie haben",
+          "dayLeftPayment": "verbleibende Tage bis zur Zahlung",
+          "successfulPayment": "Ihre Zahlung war erfolgreich",
+          "hotelButton": "Zum Hotel",
+          "bookButton": "Jetzt Buchen"
+        }
+      }
+    },
+    "general": {
+      "message": {
+        "format": "Nicht im korrekten Format",
+        "required": "Dieses Feld wird benötigt",
+        "min": "Mindestlänge",
+        "max": "Maximale Länge",
+        "numberAndSpecialCharacters": "Keine Ziffern oder Sonderzeichen erlaubt!",
+        "number": "Nur Ziffern erlaubt!",
+        "readOurPolicy": "Bitte lesen Sie unsere Richtlinien und überprüfen Sie diese",
+        "doesNotMatch": "Stimmt nicht mit dem Muster überein",
+        "dateValidate": "Entspricht nicht dem Datumsformat"
+      },
+      "button": {
+        "contact": "Kontakt",
+        "home": "Startseite",
+        "cancel": "Stornieren"
+      },
+      "processMenu": [
+        {
+          "step": 1,
+          "stepName": "Wählen Sie ihr Zimmer",
+          "slug": "result/"
+        },
+        {
+          "step": 2,
+          "stepName": "Add-Ons",
+          "slug": "addons"
+        },
+        {
+          "step": 3,
+          "stepName": "Persönliche Informationen",
+          "slug": "booking"
+        },
+        {
+          "step": 4,
+          "stepName": "Zusammenfassung",
+          "slug": "confirmation"
+        },
+        {
+          "step": 5,
+          "stepName": "Bezahlung",
+          "slug": ""
+        }
+      ],
+      "invoice": {
+        "title": "Ihre Buchung",
+        "list": {
+          "addOns": "Add-Ons",
+          "adults": "Erwachsene",
+          "guests": "Gästeanzahl",
+          "nights": "Nächte",
+          "children": "Kinder",
+          "roomType": "Zimmertyp",
+          "included": "Inklusive"
+        },
+        "total": "Gesamt",
+        "buttonText": "Zum nächsten Schritt",
+        "taxFee": "Inkl. Steuern und Gebühren"
+      }
+    },
+    "bookingSteps": {
+      "step0": {
+        "perPerson": "pro Person",
+        "buttonText": {
+          "details": "Details anzeigen"
+        }
+      },
+      "step1": {
+        "bundleDetail": {
+          "overwritePrice": "Preis überschreiben",
+          "buttonText": {
+            "full": "Details anzeigen",
+            "minimize": "Details verbergen"
+          },
+          "chooseYourRoom": "Wählen Sie ihr Zimmer"
+        },
+        "room": {
+          "only": "Nur",
+          "roomLeft": "Zimmer übrig",
+          "perNight": "Pro Nacht",
+          "freeCancel": "Kostenlose Stornierung",
+          "buttonText": "Dieses Zimmer buchen!"
+        }
+      },
+      "step2": {
+        "chooseYourAddons": "Wählen Sie ihre Add-Ons aus",
+        "all": "Alle",
+        "buttonText": "Hinzufügen",
+        "youSaved": "Durch die frühzeitige Auswahl sparen sie",
+        "noServices": "Keine passenden Services"
+      },
+      "step3": {
+        "secureBookingAlert": {
+          "title": "Ihre Daten sind sicher!",
+          "subtitle": "Verschlüsselte Transaktionen",
+          "description": "Durch die verschlüsselte Verbindung werden die Daten von Ihrem Computer sicher und vor dem Zugriff Dritter geschützt an uns übertragen."
+        },
+        "giftVoucher": {
+          "title": "Haben Sie einen Gutscheincode?",
+          "help": "Wie bekomme ich Gutscheincodes?",
+          "buttonText": "Anwenden",
+          "placeholder": "Gutscheincode"
+        },
+        "booker": {
+          "title": "Persönliche Informationen",
+          "placeholder": {
+            "title": "Titel",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "phoneNumber": "Telefonnummer",
+            "email": "E-mail",
+            "checkbox": "Buchen Sie für jemand anderen?"
+          },
+          "primaryGuest": "Hauptgast",
+          "guest": "Gast",
+          "information": "Informationen",
+          "buttonText": {
+            "add": "Gast hinzufügen",
+            "descrement": "Gast entfernen"
+          }
+        },
+        "address": {
+          "title": "Adresse",
+          "placeholder": {
+            "street": "Straße",
+            "postalCode": "Postleitzahl",
+            "country": "Land auswählen",
+            "province": "Bundesland"
+          }
+        },
+        "note": "Anmerkungen",
+        "payment": {
+          "title": "Bezahlen ihrer Buchung",
+          "select": {
+            "label": "Landeswährung",
+            "placeholder": "Wählen Sie ihr Land aus"
+          }
+        },
+        "acceptCheckbox": "Hiermit bestätige ich die AGBs des Hotels",
+        "notice": [
+          {
+            "title": "Daten Absicherung",
+            "description": "Wir verarbeiten Ihre Daten ausschließlich zur Bearbeitung Ihrer Anfrage bzw. Ihrer Bestellung. Weitere Informationen zum Umgang mit personenbezogenen Daten finden Sie in unseren Datenschutzhinweisen. Die Daten werden 24 Monate nach dem Abreisedatum gelöscht."
+          },
+          {
+            "title": "Stornobedingungen",
+            "description": "Gemäß Richtlinie 2011/83/EU des Europäischen Parlaments, Artikel 16, gilt das 14-tägige Widerrufsrecht nicht für Hotelbuchungen. Es gelten die Stornobedingungen des Hotels."
+          }
+        ],
+        "buttonText": {
+          "previous": "Zurück",
+          "next": "Nächster Schritt"
+        },
+        "popupBooking": {
+          "title": "Bitte die Seite NICHT neu laden oder verlassen!",
+          "description": "Initialisierung ihrer Buchung",
+          "notFound": "Seite nicht gefunden",
+          "serverError": "Etwas ist schief gelaufen, versuchen Sie es später erneut!",
+          "sucessBooking": "Ihre Buchung war erfolgreich!",
+          "sucessReservation": "Ihre Reservierung war erfolgreich!",
+          "getFoliostFail ": "Fehler beim Abrufen der Folios"
+        }
+      },
+      "step4": {
+        "title": "Zusammenfassung",
+        "buttonText": {
+          "previous": "Zurück",
+          "next": "Nächster Schritt"
+        },
+        "stayInfo": {
+          "title": "Aufenthalt Informationen",
+          "unit": {
+            "night": "Nacht",
+            "adults": "Erwachsene",
+            "childrens": "Kinder"
+          }
+        },
+        "roomsAndOffersInfo": {
+          "title": "Informationen zu Angeboten und Zimmern",
+          "offersAndRooms": "Angebote und Zimmer",
+          "addons": "Add-Ons",
+          "included": "Inklusive",
+          "services": "Zusammenfassung der Services",
+          "notice": "Stornobedingungen: Bis 22. Dezember 2023: 90 % des Reisepreises",
+          "buttonText": "Weiter zum Bezahlvorgang"
+        },
+        "popupBooking": {
+          "title": "Bezahlung",
+          "bookingId": "Buchungsnummer",
+          "balance": "Guthaben",
+          "description": "Schließen Sie die Zahlung ab, um fortzufahren",
+          "fail": "Zahlungsfehler",
+          "serverError": "Etwas ist schiefgelaufen, versuchen Sie es später erneut!",
+          "sucessPayment": "Zahlung war erfolgreich!",
+          "payMessage": "Sie müssen noch bezahlen",
+          "CannotPayMore": "Es ist nicht möglich mehr zu zahlen als zur Verfügung stehendes Guthaben",
+          "getLinkFail": "get payment link failed",
+          "buttonText": {
+            "payment": "Zahlung",
+            "next": "Nächster Schritt",
+            "retry": "Erneut versuchen"
+          }
+        }
+      }
+    },
+    "thankYouPage": {
+      "title": "Vielen Dank für ihre Buchung",
+      "content": {
+        "bookingID": "Buchungsnummer",
+        "email": "Eine Buchungsbestätigung wurden an ihre E-Mail gesendet",
+        "download": "Hier können Sie ihre Rechnung herunterladen"
+      },
+      "buttonText": {
+        "download": "Rechnung herunterladen",
+        "home": "Startseite",
+        "contact": "Kontakt"
+      },
+      "help": "Benötigen Sie Hilfe?"
+    },
+    "contactPage": {
+      "title": "Kontakt aufnehmen",
+      "content": [
+        "Liebe Gäste, Sie möchten abschalten und sich verwöhnen lassen? Sie haben Fragen zu unseren Sonnenhotels? Möchten Sie Ihrem Partner oder Ihren Verwandten eine Freude machen? Sie möchten einfach nur die Landschaft genießen und ein paar Tage die Seele baumeln lassen? Dann sind Sie hier genau richtig. Ganz gleich, in welches Sonnenhotel oder Resort Sie reisen möchten, wir wählen gemeinsam mit Ihnen Ihren wohlverdienten Urlaub aus.“,„Wir freuen uns auf Ihren Anruf. Ihre Mitarbeiter in der Zentralreservierung der Sonnenhotels."
+      ],
+      "contactInfo": {
+        "title": "Kontaktinformationen",
+        "phoneNumber": "+49 5321 68 55 40",
+        "email": "info@sonnenhotels.de",
+        "openWork": ["Mon - Fri: 08 Uhr - 20 Uhr", "Sat Sun & public holidays: 09 Uhr - 18 Uhr"]
+      },
+      "contactForm": {
+        "personalInfo": "Persönliche Informationen",
+        "travelData": "Reisedaten",
+        "note": "Anmerkungen",
+        "sunHotel": "Sonnenhotels",
+        "buttonText": {
+          "addHotel": "Weiteres Sonnenhotel hinzufügen",
+          "submit": "Abschicken",
+          "ok": "OK"
+        },
+        "placeholder": {
+          "name": "Ihr Name",
+          "email": "Ihre E-Mail",
+          "hotel": "Wähen Sie ein Hotel aus",
+          "guest": "Gäste",
+          "arriveDate": "Anreisedatum",
+          "departureDate": "Abreisedatum"
+        },
+        "popupSuccess": {
+          "title": "Ihre Anfrage wurde eingereicht",
+          "description": "Wir werden sie so schnell wie möglich kontaktieren"
+        }
+      }
+    },
+    "searchMenu": {
+      "location": {
+        "title": "Standort / Hotel auswählen",
+        "placeholder": "Wo soll es hingehen?"
+      },
+      "calendar": {
+        "title": "Reisedaten",
+        "arrivalPlaceHolder": "Ankunft",
+        "departurePlaceHolder": "Abreise",
+        "calendarDescription": "Basierend auf Durschnittspreisen",
+        "calendarLow": "niedrig",
+        "calendarNormal": "normal",
+        "calendarHigh": "hoch"
+      },
+      "guestAndRoom": {
+        "title": "Gäste & Zimmer",
+        "room": "Zimmer",
+        "guest": "Gäste",
+        "adults": "Erwachsene",
+        "children": "Kinder",
+        "years": "Jahre",
+        "guestAge": "18 und älter",
+        "childrenAge": "0-17"
+      }
+    },
+    "banner": {
+      "holidayPackages": "Urlaubsangebote",
+      "welcome": "Willkommen"
+    },
+    "errorPage": {
+      "notFound": {
+        "type": "Nicht gefunden",
+        "message": "Die von Ihnen gesuchte Seite wurde auf Sonnenhotels nicht gefunden"
+      }
+    }
+  }
+}

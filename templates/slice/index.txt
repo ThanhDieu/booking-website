@@ -1,0 +1,53 @@
+import requesterAxios from "@/clientApi/requester";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+
+interface sampleSliceType {
+    data: any
+}
+
+const initialState: sampleSliceType = {
+    data: undefined
+};
+
+
+/** demo create async thunk */
+export const getAllsample = createAsyncThunk(
+    'sampleSlice',
+    async (keyWord: string, thunkAPI) => {
+        const res = await requesterAxios.getAll(keyWord);
+
+        thunkAPI.abort();
+
+        return res.data
+    }
+)
+
+
+
+export const sampleSlice = createSlice({
+    name: 'sampleSlice',
+    initialState,
+    reducers:{ 
+        /***** handle blocking func here *****/
+
+    },
+
+    extraReducers: (builder) => {
+        /** handle non-blocking func here */
+
+        builder.addCase(getAllsample.pending, (state, {type, payload}) => {
+
+        });
+
+        
+    }
+
+})
+
+
+export const { 
+    /** export blocking func */
+} = sampleSlice.actions;
+
+export default sampleSlice.reducer;

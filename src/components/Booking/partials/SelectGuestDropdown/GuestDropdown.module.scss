@@ -1,0 +1,31 @@
+.guestDropdown {
+  // border: 1px solid #fafafa;
+  &:hover {
+    // border: 1px solid #3a6ea5;
+    transition: all 0.3s ease-in-out;
+  }
+  
+}
+// .dark{
+//   .disableText{
+//     .textGuest{
+//         color:#595a54;
+//     }
+//   }
+// }
+.disableText{
+  .textGuest{
+opacity: .3;
+  }
+}
+.changebutton {
+  // border: 1px solid #bdc1c6;
+  box-shadow: none;
+
+  &:hover {
+    // border-color: transparent;
+    background: #3a6ea5;
+    color: #ffffff;
+  }
+
+}

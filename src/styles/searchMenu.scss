@@ -1,0 +1,34 @@
+.fixedSearch {
+  z-index: 49;
+  background-position: bottom;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translateZ(0);
+  transition: box-shadow 0.2s ease 0s, background-color 0.2s ease 0s;
+  width: 100% !important;
+  padding: 1rem 2rem !important;
+}
+.fixedHeader {
+  @extend .fixedSearch;
+}
+
+.homePageSearchWrapper {
+  padding: 32px 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hotelPageSearchWrapper {
+  @extend .homePageSearchWrapper;
+}
+
+.homePageSearchContent {
+  align-items: center;
+  justify-content: space-around;
+}
+.hotelPageSearchContent {
+  @extend .homePageSearchContent;
+}

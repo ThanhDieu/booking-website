@@ -1,0 +1,2338 @@
+
+{
+    "schemes": [
+      
+    ],
+    "swagger": "2.0",
+    "info": {
+      "description": "APIs concern inventory",
+      "title": "Orion Inventory APIs",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "name": "API Support",
+        "url": "http://www.swagger.io/support",
+        "email": "support@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0"
+    },
+    "host": "192.168.1.184:5030",
+    "basePath": "",
+    "paths": {
+      "/orion/v1/admin/availability/v1/services": {
+        "get": {
+          "description": "Get a list of all availability services in a property",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Availability"
+          ],
+          "summary": "Get availability services",
+          "operationId": "get-availability-services",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "from",
+              "name": "from",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "to",
+              "name": "to",
+              "in": "query",
+              "required": true
+            },
+            {
+              "enum": [
+                "DayUse",
+                "OverNight"
+              ],
+              "type": "string",
+              "description": "timeSliceTemplate",
+              "name": "timeSliceTemplate",
+              "in": "query"
+            },
+            {
+              "enum": [
+                "Direct",
+                "BookingCom",
+                "Ibe",
+                "ChannelManager",
+                "Expedia",
+                "Homelike",
+                "Hrs",
+                "AltoVita"
+              ],
+              "type": "string",
+              "description": "channelCodes",
+              "name": "channelCodes",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "pageNumber",
+              "name": "pageNumber",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "pageSize",
+              "name": "pageSize",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/availability/v1/unit-groups": {
+        "get": {
+          "description": "Get a list of all availability unit groups in a property",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Availability"
+          ],
+          "summary": "Get availability unit groups",
+          "operationId": "get-availability-unit-groups",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "integer",
+              "description": "from",
+              "name": "from",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "to",
+              "name": "to",
+              "in": "query"
+            },
+            {
+              "enum": [
+                "DayUse",
+                "OverNight"
+              ],
+              "type": "string",
+              "description": "timeSliceTemplate",
+              "name": "timeSliceTemplate",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "BedRoom",
+                  "MeetingRoom",
+                  "EventSpace",
+                  "ParkingLot",
+                  "Other"
+                ],
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "unitGroupTypes",
+              "name": "unitGroupTypes",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "unitGroupIds",
+              "name": "unitGroupIds",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "adults",
+              "name": "adults",
+              "in": "query"
+            },
+            {
+              "enum": [
+                true,
+                false
+              ],
+              "type": "boolean",
+              "description": "onlySellable",
+              "name": "onlySellable",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/activities": {
+        "get": {
+          "description": "Get admin all activities",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Activity"
+          ],
+          "summary": "Get admin all activities",
+          "operationId": "get-admin-all-activities",
+          "parameters": [
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create activity",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Activity"
+          ],
+          "summary": "Create activity",
+          "operationId": "create-activity",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateActivity",
+              "name": "CreateActivity",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateActivity"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/activities/{id}": {
+        "get": {
+          "description": "Get Admin Activity",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Activity"
+          ],
+          "summary": "Get Admin Activity",
+          "operationId": "get-admin-activity",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update activity",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Activity"
+          ],
+          "summary": "Update activity",
+          "operationId": "update-activity",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "CreateActivity",
+              "name": "UpdateActivity",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateActivity"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "delete": {
+          "description": "Delete activity",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Activity"
+          ],
+          "summary": "Delete activity",
+          "operationId": "Delete-activity",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/attributes": {
+        "get": {
+          "description": "Get all attributes",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Attribute"
+          ],
+          "summary": "Get all attributes",
+          "operationId": "get-all-attributes",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/attributes/{id}": {
+        "get": {
+          "description": "Get attribute by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Attribute"
+          ],
+          "summary": "Get attribute by id",
+          "operationId": "get-attribute-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update attribute",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Attribute"
+          ],
+          "summary": "Update attribute",
+          "operationId": "update-attribute",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "AttributeRequest",
+              "name": "AttributeRequest",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.Attribute"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/availability/v1/reservations/{id}/units": {
+        "get": {
+          "description": "Get the list of available units for a specific reservation and time period.",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin ReservationAvailability"
+          ],
+          "summary": "Get a list of all available units for a reservation",
+          "operationId": "get-reservations-availability-units",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "unitGroupId",
+              "name": "unitGroupId",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "from",
+              "name": "from",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "to",
+              "name": "to",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "includeOutOfService",
+              "name": "includeOutOfService",
+              "in": "query"
+            },
+            {
+              "enum": [
+                "Clean",
+                "CleanToBeInspected",
+                "Ibe",
+                "Dirty"
+              ],
+              "type": "string",
+              "description": "unitCondition",
+              "name": "unitCondition",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/availability/v1/units": {
+        "get": {
+          "description": "Get a list of all availability units in a property",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Availability"
+          ],
+          "summary": "Get availability units",
+          "operationId": "get-availability-units",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "unitGroupId",
+              "name": "unitGroupId",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "from",
+              "name": "from",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "to",
+              "name": "to",
+              "in": "query",
+              "required": true
+            },
+            {
+              "type": "integer",
+              "description": "pageNumber",
+              "name": "pageNumber",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "pageSize",
+              "name": "pageSize",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/landscapes": {
+        "get": {
+          "description": "Get admin all landscape",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Landscape"
+          ],
+          "summary": "Get admin all landscape",
+          "operationId": "get-admin-all-landscape",
+          "parameters": [
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create landscape",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Landscape"
+          ],
+          "summary": "Create landscape",
+          "operationId": "create-landscape",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateLandscape",
+              "name": "CreateLandscape",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateLandscape"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/landscapes/{id}": {
+        "put": {
+          "description": "Update landscape",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Landscape"
+          ],
+          "summary": "Update landscape",
+          "operationId": "update-landscape",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "UpdateLandscape",
+              "name": "UpdateLandscape",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateLandscape"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "delete": {
+          "description": "Delete landscape",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Landscape"
+          ],
+          "summary": "Delete landscape",
+          "operationId": "Delete-landscape",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/properties": {
+        "get": {
+          "description": "Get admin all properties",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Property"
+          ],
+          "summary": "Get admin all properties",
+          "operationId": "get-admin-all-properties",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "boolean",
+              "description": "includePrice",
+              "name": "includePrice",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/properties/{id}": {
+        "get": {
+          "description": "Get admin property by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Property"
+          ],
+          "summary": "Get admin property by id",
+          "operationId": "get-admin-property-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "type": "boolean",
+              "description": "priceInclude",
+              "name": "priceInclude",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update property",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Property"
+          ],
+          "summary": "Update property",
+          "operationId": "update-property",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "UpdateProperty",
+              "name": "UpdateProperty",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateProperty"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/special-bundles": {
+        "get": {
+          "description": "Get admin all special bundles",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "SpecialBundle"
+          ],
+          "summary": "Get admin all special bundles",
+          "operationId": "get-admin-all-special-bundles",
+          "parameters": [
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/tags": {
+        "get": {
+          "description": "Get all tags",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Tag"
+          ],
+          "summary": "Get all tags",
+          "operationId": "get-admin-all-tags",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "type",
+              "name": "type",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "status",
+              "name": "status",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "isGlobal",
+              "name": "isGlobal",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "tagId",
+              "name": "tagId",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create tag",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Tag"
+          ],
+          "summary": "Create tag",
+          "operationId": "create-tag",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateTag",
+              "name": "CreateTag",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateTag"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/tags/{id}": {
+        "get": {
+          "description": "Get Tag",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Tag"
+          ],
+          "summary": "Get Tag",
+          "operationId": "get-tag",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update tag",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Tag"
+          ],
+          "summary": "Update tag",
+          "operationId": "update-tag",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "UpdateTag",
+              "name": "UpdateTag",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateTag"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "delete": {
+          "description": "Delete tag",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Tag"
+          ],
+          "summary": "Delete tag",
+          "operationId": "Delete-tag",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/unit-groups": {
+        "get": {
+          "description": "Get all unit groups",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit-Group"
+          ],
+          "summary": "Get all unit groups",
+          "operationId": "get-all-unit-groups",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "boolean",
+              "description": "priceInclude",
+              "name": "priceInclude",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "periods",
+              "name": "periods",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "priceInclude",
+              "name": "priceInclude",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "ratePlanInclude",
+              "name": "ratePlanInclude",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create unit-group",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit-Group"
+          ],
+          "summary": "Create unit group",
+          "operationId": "create-unit group",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateUnitGroup",
+              "name": "CreateUnitGroup",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateUnitGroup"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/unit-groups/{id}": {
+        "get": {
+          "description": "Get unit group by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit-Group"
+          ],
+          "summary": "Get unit group by id",
+          "operationId": "get-unit-group-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "type": "boolean",
+              "description": "priceInclude",
+              "name": "priceInclude",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update unit group",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit-Group"
+          ],
+          "summary": "Update unit group",
+          "operationId": "update-unit-group",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "UpdateUnitGroup",
+              "name": "UpdateUnitGroup",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateUnitGroup"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "delete": {
+          "description": "Delete unit group",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit-Group"
+          ],
+          "summary": "Delete unit group",
+          "operationId": "delete-unit group",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/units": {
+        "get": {
+          "description": "Get all units",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit"
+          ],
+          "summary": "Get all units",
+          "operationId": "get-all-units",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "unitGroupIds",
+              "name": "unitGroupIds",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "tagIds",
+              "name": "tagIds",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "isOccupied",
+              "name": "isOccupied",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "post": {
+          "description": "Create unit",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit"
+          ],
+          "summary": "Create unit",
+          "operationId": "create-unit",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "description": "CreateUnit",
+              "name": "CreateUnit",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.CreateUnit"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/admin/inventory/units/{id}": {
+        "get": {
+          "description": "Get unit by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit"
+          ],
+          "summary": "Get unit by id",
+          "operationId": "get-unit-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "put": {
+          "description": "Update unit",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit"
+          ],
+          "summary": "Update unit",
+          "operationId": "update-unit",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "description": "UpdateUnit",
+              "name": "UpdateUnit",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/backend.UpdateUnit"
+              }
+            }
+          ],
+          "responses": {
+            
+          }
+        },
+        "delete": {
+          "description": "Delete unit",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Admin Unit"
+          ],
+          "summary": "Delete unit",
+          "operationId": "delete-unit",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/activities": {
+        "get": {
+          "description": "Get all activities",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Activity"
+          ],
+          "summary": "Get all activities",
+          "operationId": "get-all-activities",
+          "parameters": [
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/activities/{id}": {
+        "get": {
+          "description": "Get Activity",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Activity"
+          ],
+          "summary": "Get Activity",
+          "operationId": "get-activity",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/events": {
+        "get": {
+          "description": "Get all events",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Events"
+          ],
+          "summary": "Get all events",
+          "operationId": "get-all-events",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/landscapes/{id}": {
+        "get": {
+          "description": "Get Landscape",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Landscape"
+          ],
+          "summary": "Get Landscape",
+          "operationId": "get-landscape",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "authorization token",
+              "name": "Authorization",
+              "in": "header",
+              "required": true
+            },
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/properties": {
+        "get": {
+          "description": "Get all properties",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Property"
+          ],
+          "summary": "Get all properties",
+          "operationId": "get-all-properties",
+          "parameters": [
+            {
+              "type": "boolean",
+              "description": "includePrice",
+              "name": "includePrice",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/properties/locations/search": {
+        "get": {
+          "description": "Get location",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Property"
+          ],
+          "summary": "Get location",
+          "operationId": "get-location",
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/properties/{id}": {
+        "get": {
+          "description": "Get property by id",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Property"
+          ],
+          "summary": "Get property by id",
+          "operationId": "get-property-by-id",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "id",
+              "name": "id",
+              "in": "path",
+              "required": true
+            },
+            {
+              "type": "boolean",
+              "description": "priceInclude",
+              "name": "priceInclude",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/special-bundles": {
+        "get": {
+          "description": "Get all special bundles",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "SpecialBundle"
+          ],
+          "summary": "Get all special bundles",
+          "operationId": "get-all-special-bundles",
+          "parameters": [
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      },
+      "/orion/v1/inventory/tags": {
+        "get": {
+          "description": "Get all tags",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "Tag"
+          ],
+          "summary": "Get all tags",
+          "operationId": "get-all-tags",
+          "parameters": [
+            {
+              "type": "string",
+              "description": "type",
+              "name": "type",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "propertyId",
+              "name": "propertyId",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "status",
+              "name": "status",
+              "in": "query"
+            },
+            {
+              "type": "boolean",
+              "description": "isGlobal",
+              "name": "isGlobal",
+              "in": "query"
+            },
+            {
+              "type": "string",
+              "description": "tagId",
+              "name": "tagId",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "perPage",
+              "name": "perPage",
+              "in": "query"
+            },
+            {
+              "type": "integer",
+              "description": "currentPage",
+              "name": "currentPage",
+              "in": "query"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "collectionFormat": "csv",
+              "description": "sorts",
+              "name": "sorts",
+              "in": "query"
+            }
+          ],
+          "responses": {
+            
+          }
+        }
+      }
+    },
+    "definitions": {
+      "backend.Attribute": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/definitions/gormjsonb.JSONB"
+          },
+          "description": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean",
+            "example": false
+          },
+          "extId": {
+            "type": "string"
+          },
+          "extendedData": {
+            "$ref": "#/definitions/gormjsonb.JSONB"
+          },
+          "name": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateActivity": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "media": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateLandscape": {
+        "type": "object",
+        "properties": {
+          "icons": {
+            "$ref": "#/definitions/backend.Icons"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateTag": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extendedData": {
+            "$ref": "#/definitions/gormjsonb.JSONB"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "isGlobal": {
+            "type": "boolean"
+          },
+          "propertyIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "description": "unit, service, polic msgpack:\"type\"` // unit, service, policy",
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateUnit": {
+        "type": "object",
+        "required": [
+          "description",
+          "propertyId",
+          "title"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "maxPersons": {
+            "type": "integer"
+          },
+          "propertyId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "unitGroupId": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.CreateUnitGroup": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "maxPersons": {
+            "type": "integer"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "propertyId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.Icons": {
+        "type": "object",
+        "properties": {
+          "dark": {
+            "type": "string"
+          },
+          "light": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.UpdateLandscape": {
+        "type": "object",
+        "properties": {
+          "icons": {
+            "$ref": "#/definitions/backend.Icons"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.UpdateProperty": {
+        "type": "object",
+        "properties": {
+          "end": {
+            "type": "integer"
+          },
+          "landscapeId": {
+            "type": "string"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "start": {
+            "type": "integer"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "backend.UpdateTag": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extendedData": {
+            "$ref": "#/definitions/gormjsonb.JSONB"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "isGlobal": {
+            "type": "boolean"
+          },
+          "propertyIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "backend.UpdateUnit": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "backend.UpdateUnitGroup": {
+        "type": "object",
+        "properties": {
+          "maximumDiscount": {
+            "type": "number"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "minimumPrice": {
+            "type": "number"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "tagIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "gormjsonb.JSONB": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }

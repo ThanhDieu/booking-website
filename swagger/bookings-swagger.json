@@ -1,0 +1,674 @@
+
+{
+  "schemes": [
+    
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "APIs concern booking",
+    "title": "Orion Booking APIs",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "API Support",
+      "url": "http://www.swagger.io/support",
+      "email": "support@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0"
+  },
+  "host": "192.168.1.184:5031",
+  "basePath": "",
+  "paths": {
+    "/orion/v1/admin/bookings/activities": {
+      "get": {
+        "description": "Get all activities bookings",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Admin ActivityBooking"
+        ],
+        "summary": "Get all activities bookings",
+        "operationId": "get-all-activities-bookings",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "perPage",
+            "name": "perPage",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "description": "currentPage",
+            "name": "currentPage",
+            "in": "query"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv",
+            "description": "sorts",
+            "name": "sorts",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          
+        }
+      },
+      "post": {
+        "description": "Create activity booking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Admin ActivityBooking"
+        ],
+        "summary": "Create activity booking",
+        "operationId": "create-activity-booking",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "description": "CreateActivityBooking",
+            "name": "CreateActivityBooking",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/backend.CreateActivityBooking"
+            }
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/admin/bookings/activities/{id}": {
+      "delete": {
+        "description": "Delete activity booking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Admin ActivityBooking"
+        ],
+        "summary": "Delete activity booking",
+        "operationId": "delete-activity-booking",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "id",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/admin/bookings/bookers": {
+      "get": {
+        "description": "Get all bookers",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Booker"
+        ],
+        "summary": "Get all bookers",
+        "operationId": "get-all-bookers",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "search",
+            "name": "search",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "description": "perPage",
+            "name": "perPage",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "description": "currentPage",
+            "name": "currentPage",
+            "in": "query"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv",
+            "description": "sorts",
+            "name": "sorts",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/bookings": {
+      "post": {
+        "description": "Create booking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Create booking",
+        "operationId": "create-booking",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "description": "CreateBooking",
+            "name": "CreateBooking",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/backend.CreateBooking"
+            }
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/bookings/history": {
+      "get": {
+        "description": "Get bookings history",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Get bookings history",
+        "operationId": "get-bookings-history",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "perPage",
+            "name": "perPage",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "description": "currentPage",
+            "name": "currentPage",
+            "in": "query"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv",
+            "description": "sorts",
+            "name": "sorts",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/bookings/payments/currencies": {
+      "get": {
+        "description": "Get payment currencies",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Get payment currencies",
+        "operationId": "get-payment-currencies",
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/bookings/payments/locations": {
+      "get": {
+        "description": "Get payment location",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Get payment location",
+        "operationId": "get-payment-location",
+        "responses": {
+          
+        }
+      }
+    },
+    "/orion/v1/bookings/search": {
+      "get": {
+        "description": "Get bookings with lastName and bookingId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Get bookings with lastName and bookingId",
+        "operationId": "get-bookings-lastName-bookingId",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "authorization token",
+            "name": "Authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          
+        }
+      }
+    }
+  },
+  "definitions": {
+    "backend.AddReservations": {
+      "type": "object",
+      "properties": {
+        "reservations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.CreateReservation"
+          }
+        }
+      }
+    },
+    "backend.AddService": {
+      "type": "object",
+      "required": [
+        "serviceId"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/backend.Amount"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "dates.omitempty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.ServiceDate"
+          }
+        },
+        "serviceId": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.Address": {
+      "type": "object",
+      "properties": {
+        "addressLine1": {
+          "type": "string"
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.AmendReservation": {
+      "type": "object",
+      "properties": {
+        "adults": {
+          "type": "integer",
+          "example": 1
+        },
+        "arrival": {
+          "type": "integer"
+        },
+        "departure": {
+          "type": "integer"
+        },
+        "timeSlices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.TimeSlice"
+          }
+        }
+      }
+    },
+    "backend.Amount": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.BookingService": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "serviceId": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.Company": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "taxId": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.CreateActivityBooking": {
+      "type": "object",
+      "required": [
+        "adults",
+        "arrival",
+        "bundleUpgradeId",
+        "departure",
+        "propertyId"
+      ],
+      "properties": {
+        "adults": {
+          "type": "integer"
+        },
+        "arrival": {
+          "type": "integer"
+        },
+        "bundleId": {
+          "type": "string"
+        },
+        "bundleUpgradeId": {
+          "type": "string"
+        },
+        "childs": {
+          "type": "integer"
+        },
+        "departure": {
+          "type": "integer"
+        },
+        "propertyId": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.CreateBooker": {
+      "type": "object",
+      "required": [
+        "lastName"
+      ],
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/backend.Address"
+        },
+        "birthDate": {
+          "type": "string"
+        },
+        "birthPlace": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "company": {
+          "$ref": "#/definitions/backend.Company"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "identificationIssueDate": {
+          "type": "string"
+        },
+        "identificationNumber": {
+          "type": "string"
+        },
+        "identificationType": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "middleInitial": {
+          "type": "string"
+        },
+        "nationalityCountryCode": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "preferredLanguage": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "travelPurpose": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.CreateBooking": {
+      "type": "object",
+      "required": [
+        "booker",
+        "reservations"
+      ],
+      "properties": {
+        "booker": {
+          "$ref": "#/definitions/backend.CreateBooker"
+        },
+        "bookerComment": {
+          "type": "string"
+        },
+        "reservations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.CreateReservation"
+          }
+        }
+      }
+    },
+    "backend.CreateReservation": {
+      "type": "object",
+      "required": [
+        "arrival",
+        "bundlePriceId",
+        "channelCode",
+        "departure"
+      ],
+      "properties": {
+        "additionalGuests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.CreateBooker"
+          }
+        },
+        "adults": {
+          "type": "integer"
+        },
+        "arrival": {
+          "type": "integer"
+        },
+        "bundlePriceId": {
+          "type": "string"
+        },
+        "channelCode": {
+          "type": "string"
+        },
+        "childrenAges": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "departure": {
+          "type": "integer"
+        },
+        "guaranteeType": {
+          "type": "string"
+        },
+        "primaryGuest": {
+          "$ref": "#/definitions/backend.CreateBooker"
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/backend.BookingService"
+          }
+        },
+        "travelPurpose": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.ServiceDate": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/backend.Amount"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "serviceDate": {
+          "type": "string"
+        }
+      }
+    },
+    "backend.TimeSlice": {
+      "type": "object",
+      "properties": {
+        "ratePlanId": {
+          "type": "string"
+        },
+        "totalAmount": {
+          "$ref": "#/definitions/backend.TotalAmount"
+        }
+      }
+    },
+    "backend.TotalAmount": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "example": "EUR"
+        }
+      }
+    }
+  }
+}

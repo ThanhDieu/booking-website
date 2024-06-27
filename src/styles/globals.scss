@@ -1,0 +1,391 @@
+@import '@splidejs/react-splide/css';
+@import './variable';
+// @import '~leaflet/dist/leaflet.css';
+
+/** button style **/
+
+.btnShare {
+  font-family: 'Inter';
+  transition: all 0.3s;
+  border-radius: 6px;
+  overflow: hidden;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  &:hover {
+    font-weight: 500;
+    border-color: transparent;
+    background: $color-DarkBlue;
+    color: $color-white;
+  }
+  &:focus {
+    font-weight: 500;
+    color: $color-white;
+    background-color: $color-DarkBlue;
+  }
+}
+
+.btnDark {
+  background-color: $color-Blue;
+  border: none;
+  color: white;
+  transition: all 0.3s;
+}
+.border-btn {
+  border: 1px solid $color-Blue;
+}
+
+@layer components {
+  .btnOutline {
+    @apply text-PrimaryBlack dark:text-PrimaryWhite  bg-TransParent transition-all delay-300;
+    @extend .border-btn;
+  }
+}
+
+.btnWhite {
+  @extend .btnOutline;
+  color: $color-black;
+  border: none;
+}
+
+.btnBlack {
+  border: none;
+  color: $color-white;
+  background-color: $color-black;
+  :hover {
+    background-color: $color-Blue;
+  }
+}
+
+.btnTransparent {
+  color: $color-white;
+  border: 1px solid $color-white;
+  background: none;
+  font-weight: 500;
+}
+
+.btnWarning {
+  background-color: $color-Warning;
+  border: none;
+  color: white;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $color-WarningHover;
+  }
+}
+
+.cssbtnSurface {
+  border: none;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+@layer components {
+  .btnSurface {
+    @apply dark:bg-SecondaryBlack bg-TonalGrey text-PrimaryBlack dark:text-PrimaryWhite;
+    @extend .cssbtnSurface;
+  }
+}
+
+.holiday {
+  .splide__arrow {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.3s;
+    background: #eff0f0;
+  }
+  .splide__arrow--prev {
+    left: -3.5rem;
+  }
+  .splide__arrow--next {
+    right: -3.5rem;
+  }
+}
+// .dark {
+//   .holiday {
+//     .splide__arrow {
+//       background: #0a85b6;
+//     }
+//   }
+// }
+
+.miniRoom {
+  .splide__arrow {
+    width: 1rem;
+    height: 1rem;
+    transition: all 0.3s;
+  }
+  .splide__arrow--prev {
+    left: 1rem;
+    background-color: transparent;
+    svg {
+      fill: white;
+    }
+  }
+  .splide__arrow--next {
+    right: 1rem;
+    background-color: transparent;
+    svg {
+      fill: white;
+    }
+  }
+}
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9); /* Black see-through */
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+/** custom srolbar styles **/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Is Loading */
+.lds-dual-ring {
+  display: inline-block;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/** loading 2*/
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #0a85b6;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0a85b6 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.body-overflow-hidden {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.qouteSymbol {
+  position: relative;
+  &:before {
+    position: absolute;
+    color: #61666b;
+    content: '“';
+    left: -15px;
+    top: -20px;
+    z-index: 10;
+    font-family: Font awesome\5 Free;
+    line-height: 40px;
+    font-size: 80px;
+    font-weight: 900;
+  }
+  &::after {
+    position: absolute;
+    color: #61666b;
+    content: '„';
+    right: -15px;
+    bottom: 21px;
+    z-index: 10;
+    font-family: Font awesome\5 Free;
+    line-height: 40px;
+    font-size: 80px;
+    font-weight: 900;
+  }
+}
+
+// Scale image when hover
+
+// global
+.scaleImage {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+//Only for image has overlay
+.scalePackages {
+  img {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+}
+
+/** phone input style */
+.react-tel-input {
+  .country-list .country {
+    background-color: #fff;
+    &:hover {
+      background-color: rgb(57, 62, 70);
+    }
+    
+  }
+  .divider{
+    padding-bottom: 0;
+     margin-bottom: 0;
+  }
+  .country-list .country.highlight {
+    background-color: #d8e1e6;
+  }
+  .selected-flag:hover,
+  .selected-flag:focus {
+    background-color: #1d1f20;
+  }
+  .flag-dropdown.open .selected-flag {
+    background-color: #1d1f20;
+  }
+  input {
+    width: 100% !important;
+    border-inline-end-width: 1px !important;
+    padding: 7px 7px 7px 48px !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    border-radius: 8px !important;
+  }
+  .form-control {
+    border: 1px solid #46505f !important;
+  }
+  .flag-dropdown {
+    border: 1px solid #46505f !important;
+  }
+}
+
+.dark {
+  .react-tel-input .country-list .country.highlight {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 4px;
+    background-color: #14191e;
+  }
+  .react-tel-input {
+    .country-list .country {
+      background-color: #282e36;
+      &:hover {
+        background-color: #393e46;
+      }
+    }
+  }
+
+  .react-tel-input {
+    .selected-flag:hover,
+    .selected-flag:focus {
+      background-color: #1d1f20;
+    }
+    .flag-dropdown.open .selected-flag {
+      background-color: #1d1f20;
+    }
+  }
+
+  .form-account {
+    :where(.css-dev-only-do-not-override-4kyv22).ant-picker {
+      border: 1px solid #46505f;
+    }
+  }
+}
+
+.textDesc-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 1;
+}
+
+.textDesc-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+}
+.textDesc-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 3;
+}
+.botBorder {
+  border-bottom: solid 1px;
+}

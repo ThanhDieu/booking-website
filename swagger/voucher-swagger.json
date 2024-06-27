@@ -1,0 +1,297 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "description": "APIs concern voucher",
+      "title": "Orion Voucher APIs",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+          "name": "API Support",
+          "url": "http://www.swagger.io/support",
+          "email": "support@swagger.io"
+      },
+      "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0"
+  },
+  "host": "localhost:5029",
+  "paths": {
+      "/orion/v1/admin/vouchers": {
+          "get": {
+              "description": "Get Vouchers",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Admin Voucher"
+              ],
+              "summary": "Get Vouchers",
+              "operationId": "get-admin-vouchers",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "status",
+                      "name": "status",
+                      "in": "query"
+                  },
+                  {
+                      "type": "integer",
+                      "description": "perPage",
+                      "name": "perPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "integer",
+                      "description": "currentPage",
+                      "name": "currentPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "array",
+                      "items": {
+                          "type": "string"
+                      },
+                      "description": "sorts",
+                      "name": "sorts",
+                      "in": "query"
+                  },
+                  {
+                      "type": "string",
+                      "description": "status",
+                      "name": "status",
+                      "in": "query"
+                  },
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  }
+              ],
+              "responses": {}
+          },
+          "post": {
+              "description": "Create Voucher",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Admin Voucher"
+              ],
+              "summary": "Create Voucher",
+              "operationId": "create-admin-voucher",
+              "parameters": [
+                  {
+                      "description": "createVoucher",
+                      "name": "CreateVoucher",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/backend.CreateVoucher"
+                      }
+                  },
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/admin/vouchers/check": {
+          "get": {
+              "description": "Check Voucher",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Admin Voucher"
+              ],
+              "summary": "Check Voucher",
+              "operationId": "check-admin-voucher",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "code",
+                      "name": "code",
+                      "in": "query",
+                      "required": true
+                  },
+                  {
+                      "type": "string",
+                      "description": "propertyId",
+                      "name": "propertyId",
+                      "in": "query",
+                      "required": true
+                  },
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/vouchers": {
+          "get": {
+              "description": "Get Vouchers",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "IBE Voucher"
+              ],
+              "summary": "Get Vouchers",
+              "operationId": "get-ibe-vouchers",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "status",
+                      "name": "status",
+                      "in": "query"
+                  },
+                  {
+                      "type": "integer",
+                      "description": "perPage",
+                      "name": "perPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "integer",
+                      "description": "currentPage",
+                      "name": "currentPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "array",
+                      "items": {
+                          "type": "string"
+                      },
+                      "description": "sorts",
+                      "name": "sorts",
+                      "in": "query"
+                  },
+                  {
+                      "type": "string",
+                      "description": "status",
+                      "name": "status",
+                      "in": "query"
+                  }
+              ],
+              "responses": {}
+          },
+          "post": {
+              "description": "Create Voucher",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "IBE Voucher"
+              ],
+              "summary": "Create Voucher",
+              "operationId": "create-ibe-voucher",
+              "parameters": [
+                  {
+                      "description": "createVoucher",
+                      "name": "CreateVoucher",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/backend.CreateVoucher"
+                      }
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/vouchers/check": {
+          "get": {
+              "description": "Check Voucher",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "IBE Voucher"
+              ],
+              "summary": "Check Voucher",
+              "operationId": "check-ibe-voucher",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "code",
+                      "name": "code",
+                      "in": "query",
+                      "required": true
+                  },
+                  {
+                      "type": "string",
+                      "description": "propertyId",
+                      "name": "propertyId",
+                      "in": "query",
+                      "required": true
+                  }
+              ],
+              "responses": {}
+          }
+      }
+  },
+  "definitions": {
+      "backend.CreateVoucher": {
+          "type": "object",
+          "required": [
+              "currency",
+              "email",
+              "hotel",
+              "name",
+              "ref",
+              "value"
+          ],
+          "properties": {
+              "currency": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              },
+              "hotel": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "ref": {
+                  "type": "string"
+              },
+              "value": {
+                  "type": "integer"
+              }
+          }
+      }
+  }
+}

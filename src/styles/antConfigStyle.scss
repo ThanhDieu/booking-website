@@ -1,0 +1,242 @@
+@import './variable';
+
+/* Date picker config */
+
+.ant-picker-dropdown-range {
+  padding: 0px;
+}
+
+.ant-picker-dropdown .ant-picker-date-panel .ant-picker-content {
+  width: 100% !important;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ant-picker-dropdown .ant-picker-decade-panel,
+.ant-picker-dropdown .ant-picker-year-panel,
+.ant-picker-dropdown .ant-picker-quarter-panel,
+.ant-picker-dropdown .ant-picker-month-panel,
+.ant-picker-dropdown .ant-picker-week-panel,
+.ant-picker-dropdown .ant-picker-date-panel,
+.ant-picker-dropdown .ant-picker-time-panel {
+  width: 350px !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell .ant-picker-cell-inner {
+  height: 30px !important;
+  width: 30px !important;
+  line-height: 30px !important;
+  text-align: center !important;
+  border-radius: 100% !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell::before {
+  top: 6px !important;
+  height: 30px !important;
+  transform: translate(0) !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-radius: 100% !important;
+}
+
+.ant-picker-dropdown .ant-picker-panel-container .ant-picker-panels .ant-picker-panel:first-child {
+  border-right: 1px solid rgba(5, 5, 5, 0.06) !important;
+}
+
+@media (max-width: 768px) {
+  .ant-picker-dropdown-range {
+    inset: 268px auto auto 7.5px !important;
+    .ant-picker-panel-layout {
+      height: 500px;
+      overflow-x: scroll;
+      .ant-picker-panels {
+        display: flex !important;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  border-radius: 100% !important;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-start-near-hover::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range)::after {
+  top: 6px !important;
+  height: 30px !important;
+  transform: translate(0) !important;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover::after {
+  border-radius: 0 100% 100% 0 !important;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single::after {
+  border-radius: 100% 0 0 100% !important;
+}
+
+.CustomerDate {
+  .ant-picker-suffix {
+    display: none;
+  }
+  .ant-picker-input {
+    &:nth-child(3) {
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: text;
+      }
+    }
+  }
+  .ant-picker-clear {
+    z-index: 2;
+  }
+  .ant-picker-input:last-child input {
+    text-align: center;
+  }
+  .ant-picker:hover,
+  .ant-picker-focused {
+    border-color: #3a6ea5;
+  }
+}
+
+.ant-picker-input {
+  input {
+    font-family: 'Inter' !important;
+  }
+}
+
+// location search
+.mySelectIBE {
+  .ant-select-arrow {
+    display: none !important;
+  }
+}
+
+.mySelectIBE {
+  :where(.css-dev-only-do-not-override-1s79uwv).ant-select .ant-select-arrow {
+    display: none;
+    &:hover {
+      color: #3a6ea5;
+    }
+  }
+  &:hover {
+    .ant-select-selection-search {
+      .ant-select-selection-search-input {
+        border-bottom: 1px solid #3a6ea5 !important;
+      }
+    }
+  }
+  .ant-select-selector {
+    border-width: 0 0 1px 0 !important;
+    height: 48px !important;
+    align-items: center;
+    padding: 0 1rem !important;
+    &:hover,
+    &:focus-visible {
+      .ant-select-selection-placeholder {
+        font-size: 20px !important;
+      }
+    }
+    .ant-select-selection-placeholder {
+      font-family: 'Lora';
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .ant-select-selection-item {
+      font-family: 'Lora';
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      // color: #0e1013;
+    }
+  }
+  .ant-select-selection-search {
+    .ant-select-selection-search-input {
+      padding-left: 0.4rem !important;
+      font-family: Lora;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      height: 100% !important;
+      border-bottom: 1px solid #dadce0 !important;
+      &:focus-visible {
+        outline: none;
+        border-bottom: 1px solid #3a6ea5 !important;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .mySelectIBE {
+     .ant-select-selection-placeholder {
+      font-family: 'Lora';
+      font-size: 16px !important;
+      line-height: 20px;
+    }
+    .ant-select-selection-item {
+      font-family: 'Lora';
+      font-size: 16px !important;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+.ant-select-tree-indent {
+  display: none;
+}
+
+.ant-select-tree-node-content-wrapper {
+  &:hover {
+    background-color: none !important;
+  }
+}
+
+.ant-select-tree-switcher {
+  margin-left: 13px !important;
+}
+
+.ant-select-tree-title {
+  padding-left: 0.4rem !important;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  height: 100% !important;
+}
+
+.ant-popover-disabled-compatible-wrapper {
+  button {
+    background-color: transparent;
+    border: 0;
+  }
+}

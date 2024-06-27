@@ -1,0 +1,746 @@
+{
+    "schemes": [],
+    "swagger": "2.0",
+    "info": {
+        "description": "APIs concern bundle",
+        "title": "Orion Search Bundles Example APIs",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "192.168.1.184:5036",
+    "basePath": "",
+    "paths": {
+        "/orion/v1/bundles": {
+            "get": {
+                "description": "Get bundles",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bundle"
+                ],
+                "summary": "Get bundles",
+                "operationId": "load-bundles",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "landscape",
+                        "name": "landscape",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "activities",
+                        "name": "activities",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "arrival",
+                        "name": "arrival",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "departure",
+                        "name": "departure",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "isHomePage",
+                        "name": "isHomePage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "isHotelPage",
+                        "name": "isHotelPage",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/backend.JsonResult"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/model_backend_ibe.Bundle"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/orion/v1/bundles/load": {
+            "get": {
+                "description": "Load bundles",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bundle"
+                ],
+                "summary": "Load Bundles",
+                "operationId": "get-bundles",
+                "responses": {}
+            }
+        },
+        "/orion/v1/bundles/search": {
+            "get": {
+                "description": "Search bundles",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bundle"
+                ],
+                "summary": "Search bundles",
+                "operationId": "search-bundles",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "countryCode",
+                        "name": "countryCode",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "propertyId",
+                        "name": "propertyId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "arrival",
+                        "name": "arrival",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "departure",
+                        "name": "departure",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "adults",
+                        "name": "adults",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "rooms",
+                        "name": "rooms",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "children",
+                        "name": "children",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "childrenAgeBelow",
+                        "name": "childrenAgeBelow",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "unitGroupId",
+                        "name": "unitGroupId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "landscape",
+                        "name": "landscape",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "activities",
+                        "name": "activities",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "specials",
+                        "name": "specials",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "isHolidayPackage",
+                        "name": "isHolidayPackage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "mainActivity",
+                        "name": "mainActivity",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "isHomePage",
+                        "name": "isHomePage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "isHotelPage",
+                        "name": "isHotelPage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "perPage",
+                        "name": "perPage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "currentPage",
+                        "name": "currentPage",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "sorts",
+                        "name": "sorts",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "timezone",
+                        "name": "timezone",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/backend.JsonResult"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "adults": {
+                                                        "type": "integer"
+                                                    },
+                                                    "data": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/definitions/model_backend_ibe.Bundle"
+                                                        }
+                                                    },
+                                                    "isNearby": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "pagination": {
+                                                        "$ref": "#/definitions/model_backend_ibe.Pagination"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/orion/v1/bundles/search/{id}": {
+            "get": {
+                "description": "Search bundle by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bundle"
+                ],
+                "summary": "Search bundle by id",
+                "operationId": "search-bundle-by-id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "adults",
+                        "name": "adults",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "timezone",
+                        "name": "timezone",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "children",
+                        "name": "children",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "rooms",
+                        "name": "rooms",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "arrival",
+                        "name": "arrival",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "departure",
+                        "name": "departure",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/backend.JsonResult"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/model_backend_ibe.Bundle"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "backend.JsonResult": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "message": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "gormjsonb.JSONB": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "model_backend_ibe.Activity": {
+            "type": "object",
+            "properties": {
+                "activityId": {
+                    "type": "string"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "media": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Bundle": {
+            "type": "object",
+            "properties": {
+                "activities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model_backend_ibe.Activity"
+                    }
+                },
+                "bundleId": {
+                    "type": "string"
+                },
+                "bundleServices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model_backend_ibe.BundleService"
+                    }
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "isHolidayPackage": {
+                    "type": "boolean"
+                },
+                "landscape": {
+                    "$ref": "#/definitions/model_backend_ibe.Landscape"
+                },
+                "maximumStay": {
+                    "type": "integer"
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "minimumStay": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "periods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model_backend_ibe.Period"
+                    }
+                },
+                "price": {
+                    "type": "number"
+                },
+                "priceAvg": {
+                    "type": "number"
+                },
+                "priceMax": {
+                    "type": "number"
+                },
+                "priceMin": {
+                    "type": "number"
+                },
+                "priceRelaAvg": {
+                    "type": "number"
+                },
+                "priceRelaMax": {
+                    "type": "number"
+                },
+                "priceRelaMin": {
+                    "type": "number"
+                },
+                "property": {
+                    "$ref": "#/definitions/model_backend_ibe.Property"
+                },
+                "sellNumber": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.BundleService": {
+            "type": "object",
+            "properties": {
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "mode": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "originalPrice": {
+                    "type": "number"
+                },
+                "overwritePrice": {
+                    "type": "number"
+                },
+                "service": {
+                    "$ref": "#/definitions/model_backend_ibe.Service"
+                },
+                "serviceId": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Icons": {
+            "type": "object",
+            "properties": {
+                "dark": {
+                    "type": "string"
+                },
+                "light": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Landscape": {
+            "type": "object",
+            "properties": {
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "icons": {
+                    "$ref": "#/definitions/model_backend_ibe.Icons"
+                },
+                "landscapeId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Location": {
+            "type": "object",
+            "properties": {
+                "addressLine1": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Pagination": {
+            "type": "object",
+            "properties": {
+                "currentPage": {
+                    "type": "integer"
+                },
+                "perPage": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model_backend_ibe.Period": {
+            "type": "object",
+            "properties": {
+                "end": {
+                    "type": "integer"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "start": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model_backend_ibe.Property": {
+            "type": "object",
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "extId": {
+                    "type": "string"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "landscape": {
+                    "$ref": "#/definitions/model_backend_ibe.Landscape"
+                },
+                "location": {
+                    "$ref": "#/definitions/model_backend_ibe.Location"
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "timeSliceDefinition": {
+                    "$ref": "#/definitions/model_backend_ibe.TimeSliceDefinition"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.Service": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "extId": {
+                    "type": "string"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mode": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "popular": {
+                    "type": "boolean"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "priority": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        },
+        "model_backend_ibe.TimeSliceDefinition": {
+            "type": "object",
+            "properties": {
+                "checkInTime": {
+                    "type": "string"
+                },
+                "checkOutTime": {
+                    "type": "string"
+                },
+                "extendedData": {
+                    "$ref": "#/definitions/gormjsonb.JSONB"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../../../styles/variable';
+
+.dateBottom {
+  padding: 8px 18px;
+  .dateBottomItem {
+    span {
+      margin-right: 8px;
+      padding: 4px 8px;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      border-radius: 4px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    .itemLow {
+      color: $date-teal;
+    }
+    .itemAverage {
+      color: $date-yellow;
+    }
+    .itemHigh {
+      color: $date-orage;
+    }
+  }
+}

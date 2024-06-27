@@ -1,0 +1,36 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+import httpProxy from 'http-proxy';
+import Cookies from 'cookies';
+import { cookiesKey } from '@/constants';
+
+export const config = {
+    api: {
+        bodyParser: false
+    }
+};
+
+const proxy = httpProxy.createProxyServer();
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+    return new Promise((resolve) => {
+        
+        const cookies = new Cookies(req, res);
+        const auth = cookies.get(String(cookiesKey.ACCESS_TOKEN));
+       if(auth) {
+        req.headers.authorization = `Bearer ${auth}`
+       };
+
+        req.headers.cookie = '';
+        req.headers.accessToken = process.env.NEXT_APP_ACCESS_TOKEN,
+
+        proxy.web(req, res, {
+            target: process.env.NEXT_APP_API_URL,
+            changeOrigin: true,
+            selfHandleResponse: false,
+        });
+
+        proxy.once('proxyRes', () => {
+            resolve(true)
+        });
+    });
+};

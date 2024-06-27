@@ -1,0 +1,46 @@
+@import '../../../styles/variable';
+
+.tagName {
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 5px;
+}
+
+.tagNameDefault {
+  background-color: $color-white;
+  border: 1px solid $color-LightGrey;
+}
+
+.tagNamePrimary {
+  background: $color-Blue;
+  border-color: $color-Blue;
+  color: $color-white;
+}
+
+.tagNameDark {
+  background: $tag-dark-bg;
+  border-color: $tag-dark-border;
+  color: $tag-dark;
+}
+
+.tagNameSuccess {
+  background: $tag-success-bg;
+  border-color: $tag-success-border;
+  color: $tag-success;
+}
+
+.tagNameWarning {
+  background: $tag-warning-bg;
+  border-color: $tag-warning-border;
+  color: $tag-warning;
+}
+
+.tagNameDanger {
+  background: $tag-danger-bg;
+  border-color: $tag-danger-border;
+  color: $tag-danger;
+}

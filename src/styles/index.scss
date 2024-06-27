@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './_variable';
+@import './functions.scss';
+@import './globals.scss';
+@import './antConfigStyle.scss';
+@import './font.scss';
+@import './searchMenu.scss';
+@import './typography.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100% !important;
+  color: $color-black;
+  overflow-y: scroll;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  background: $color-NeutralGrey;
+  font-size: 1rem;
+  line-height: 20px;
+  scroll-behavior: smooth;
+  font-family: 'Inter', 'Lora';
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: inherit;
+  }
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ant-picker-range-arrow,
+.ant-popover-arrow {
+  display: none !important;
+}
+
+span {
+  font-family: 'Inter', 'Lora';
+}
+
+//Darkmode using Tailwindcss
+@layer components {
+  .text-primary-switch {
+    @apply text-PrimaryBlack  dark:text-PrimaryWhite;
+  }
+  .text-secondary-switch {
+    @apply text-SecondaryBlack dark:text-SecondaryGrey;
+  }
+  .text-grey-switch {
+    @apply text-PlaceHolderDarkGrey dark:text-SecondaryGrey;
+  }
+  .bg-primary-switch {
+    @apply bg-PrimaryWhite dark:bg-PrimaryBlack;
+  }
+
+  .bg-secondary-switch {
+    @apply bg-PrimaryGrey dark:bg-DarkGrey;
+  }
+
+  .border-switch {
+    @apply border-SecondaryGrey dark:border-SecondaryBlack;
+  }
+
+  .bg-icon-switch {
+    @apply bg-PrimaryBlack dark:bg-PrimaryWhite;
+  }
+  .blue-text-switch {
+    @apply text-PrimaryBlue dark:text-SecondaryBlue;
+  }
+  .blue-outline-switch {
+    @apply border border-PrimaryBlue dark:border-SecondaryBlue;
+  }
+}

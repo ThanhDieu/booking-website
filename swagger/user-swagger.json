@@ -1,0 +1,453 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "description": "APIs concern booking",
+      "title": "Orion auth APIs",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+          "name": "API Support",
+          "url": "http://www.swagger.io/support",
+          "email": "support@swagger.io"
+      },
+      "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0"
+  },
+  "host": "192.168.1.184:5010",
+  "paths": {
+      "/orion/v1/auth/callback": {
+          "get": {
+              "description": "Auth callback",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Auth"
+              ],
+              "summary": "Auth callback",
+              "operationId": "auth-callback",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "code",
+                      "name": "code",
+                      "in": "query",
+                      "required": true
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/auth/google/url": {
+          "get": {
+              "description": "Get google login url base on environment",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Auth"
+              ],
+              "summary": "Auth get google login url",
+              "operationId": "auth-get-google-url",
+              "responses": {}
+          }
+      },
+      "/orion/v1/auth/register": {
+          "post": {
+              "description": "Auth register",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "Auth"
+              ],
+              "summary": "Auth register",
+              "operationId": "auth-register",
+              "parameters": [
+                  {
+                      "description": "AuthRegisterRequest",
+                      "name": "AuthRegisterRequest",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/backend.AuthRegisterRequest"
+                      }
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/auth/users/bookings": {
+          "get": {
+              "description": "User user bookings by jwt token",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "User"
+              ],
+              "summary": "User user bookings",
+              "operationId": "auth-user-bookings",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  },
+                  {
+                      "type": "integer",
+                      "description": "perPage",
+                      "name": "perPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "integer",
+                      "description": "currentPage",
+                      "name": "currentPage",
+                      "in": "query"
+                  },
+                  {
+                      "type": "array",
+                      "items": {
+                          "type": "string"
+                      },
+                      "description": "sorts",
+                      "name": "sorts",
+                      "in": "query"
+                  }
+              ],
+              "responses": {}
+          }
+      },
+      "/orion/v1/auth/users/profile": {
+          "get": {
+              "description": "User get profile by jwt token",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "User"
+              ],
+              "summary": "User get profile",
+              "operationId": "auth-get-profile",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  },
+                  {
+                      "type": "array",
+                      "items": {
+                          "enum": [
+                              "roles"
+                          ],
+                          "type": "string"
+                      },
+                      "description": "expands",
+                      "name": "expands",
+                      "in": "query"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "success",
+                      "schema": {
+                          "$ref": "#/definitions/backend.User"
+                      }
+                  }
+              }
+          },
+          "put": {
+              "description": "User update profile",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "tags": [
+                  "User"
+              ],
+              "summary": "User update profile",
+              "operationId": "auth-update-profile",
+              "parameters": [
+                  {
+                      "type": "string",
+                      "description": "authorization token",
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true
+                  },
+                  {
+                      "description": "UpdateUser",
+                      "name": "UpdateUser",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/backend.UpdateUser"
+                      }
+                  }
+              ],
+              "responses": {}
+          }
+      }
+  },
+  "definitions": {
+      "backend.AuthLoginRequest": {
+          "type": "object",
+          "properties": {
+              "password": {
+                  "type": "string"
+              },
+              "username": {
+                  "type": "string"
+              }
+          }
+      },
+      "backend.AuthRegisterRequest": {
+          "type": "object",
+          "properties": {
+              "confirmPassword": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              },
+              "firstName": {
+                  "type": "string"
+              },
+              "lastName": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              }
+          }
+      },
+      "backend.RegisterUser": {
+          "type": "object",
+          "required": [
+              "language",
+              "password",
+              "roles",
+              "username"
+          ],
+          "properties": {
+              "language": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              },
+              "roles": {
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "username": {
+                  "type": "string"
+              }
+          }
+      },
+      "backend.Role": {
+          "type": "object",
+          "properties": {
+              "color": {
+                  "type": "string"
+              },
+              "comment": {
+                  "type": "string"
+              },
+              "extendedData": {
+                  "$ref": "#/definitions/gormjsonb.JSONB"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "roleId": {
+                  "type": "string"
+              },
+              "title": {
+                  "type": "string"
+              }
+          }
+      },
+      "backend.UpdateUser": {
+          "type": "object",
+          "properties": {
+              "addressLine1": {
+                  "type": "string"
+              },
+              "addressLine2": {
+                  "type": "string"
+              },
+              "avatar": {
+                  "type": "string"
+              },
+              "city": {
+                  "type": "string"
+              },
+              "country": {
+                  "type": "string"
+              },
+              "countryCode": {
+                  "type": "string"
+              },
+              "dateOfBirth": {
+                  "type": "string"
+              },
+              "firstName": {
+                  "type": "string"
+              },
+              "gender": {
+                  "type": "string"
+              },
+              "lastName": {
+                  "type": "string"
+              },
+              "location": {
+                  "type": "string"
+              },
+              "phoneNumber": {
+                  "type": "string"
+              },
+              "postalCode": {
+                  "type": "string"
+              },
+              "title": {
+                  "type": "string"
+              }
+          }
+      },
+      "backend.UpdateUserAdmin": {
+          "type": "object",
+          "required": [
+              "language"
+          ],
+          "properties": {
+              "enabled": {
+                  "type": "boolean"
+              },
+              "language": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              },
+              "roles": {
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          }
+      },
+      "backend.User": {
+          "type": "object",
+          "properties": {
+              "addressLine1": {
+                  "type": "string"
+              },
+              "addressLine2": {
+                  "type": "string"
+              },
+              "avatar": {
+                  "type": "string"
+              },
+              "city": {
+                  "type": "string"
+              },
+              "country": {
+                  "type": "string"
+              },
+              "countryCode": {
+                  "type": "string"
+              },
+              "dateOfBirth": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              },
+              "enabled": {
+                  "type": "boolean"
+              },
+              "extendedData": {
+                  "$ref": "#/definitions/gormjsonb.JSONB"
+              },
+              "firstName": {
+                  "type": "string"
+              },
+              "gender": {
+                  "type": "string"
+              },
+              "language": {
+                  "type": "string"
+              },
+              "lastName": {
+                  "type": "string"
+              },
+              "location": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "phoneNumber": {
+                  "type": "string"
+              },
+              "postalCode": {
+                  "type": "string"
+              },
+              "roles": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/backend.Role"
+                  }
+              },
+              "title": {
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              },
+              "userId": {
+                  "type": "string"
+              },
+              "username": {
+                  "type": "string"
+              }
+          }
+      },
+      "gormjsonb.JSONB": {
+          "type": "object",
+          "additionalProperties": true
+      }
+  }
+}

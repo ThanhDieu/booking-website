@@ -1,0 +1,35 @@
+
+import MainLayout from '@/layouts/MainLayout'
+import { NextSheetWidthLayout } from '@/types/layoutType'
+import React, { Fragment } from 'react'
+import PageProps from '@/types/Page';
+import { GetServerSidePropsContext, GetStaticPathsContext } from 'next';
+
+
+
+const Page: NextSheetWidthLayout = (props: PageProps) => {
+    return (
+        <Fragment></Fragment>
+    );
+}
+
+Page.Layout = MainLayout;
+
+export default Page;
+
+
+
+export const getStaticPaths = async (context: GetStaticPathsContext) => {
+    return {
+        paths:[],
+        fallback: true
+    }
+}
+
+export const getStaticProps = async (context: GetServerSidePropsContext) =>  {
+
+    return {
+        props: {},
+        revalidate: 60
+    }; 
+}

@@ -1,0 +1,12 @@
+import React, { Fragment } from 'react'
+import styles from './Component.module.scss'
+import ComponentProps from './@types'
+
+
+const Component = (props: ComponentProps) => {
+  return (
+    <Fragment></Fragment>
+  )
+}
+
+export default Component

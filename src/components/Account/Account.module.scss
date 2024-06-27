@@ -1,0 +1,113 @@
+.baseText {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.baseTransition {
+  transition: all ease-in-out 0.5s;
+}
+
+.tabPane {
+  @extend .baseText;
+  font-weight: 500;
+  cursor: pointer;
+  @extend .baseTransition;
+  position: relative;
+
+  &::before {
+    @extend .baseTransition;
+    left: -0.5rem;
+    position: absolute;
+    content: '';
+    width: 2px;
+    opacity: 0;
+    height: 100%;
+    background-color: #0e1013;
+  }
+
+  &:hover {
+    // color: #0e1013;
+  }
+}
+
+.active {
+  position: relative;
+  color: #3a6ea5;
+
+  &::before {
+    @extend .baseTransition;
+    left: -0.5rem;
+    position: absolute;
+    content: '';
+    width: 2px;
+    opacity: 1;
+    height: 100%;
+    background-color: #3a6ea5;
+  }
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--color-neutral-divider, #dadce0);
+}
+
+.bundleTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.bundleSubtitle {
+  @extend .baseText;
+  color: #35393b;
+}
+
+.textSmall {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.textExSmall {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.textPrice {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+}
+
+.textBtn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.textHeader {
+  color: #0e1013;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+.textBlue {
+  color: #3a6ea5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.textGuestTile {
+  @extend .baseText;
+  font-size: 14px;
+  // color: #61666b;
+}
+.textDate {
+  @extend .baseText;
+  // color: #35393b;
+}
