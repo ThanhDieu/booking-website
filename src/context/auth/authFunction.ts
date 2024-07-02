@@ -20,7 +20,7 @@ function handleUserResponse(user: UserResponseProps) {
 }
 
 async function login({ username, password }: SignInProps) {
-  return client('POST', '/orion/v1/sessions', {
+  return client('POST', '/booking/v1/sessions', {
     checks: {
       user: {
         loginName: username
@@ -30,7 +30,7 @@ async function login({ username, password }: SignInProps) {
     .then((res) => {
       const { sessionId, sessionToken } = res;
       newSessionId = sessionId;
-      return client('PATCH', `/orion/v1/sessions/${sessionId}`, {
+      return client('PATCH', `/booking/v1/sessions/${sessionId}`, {
         sessionToken,
         checks: {
           password: {

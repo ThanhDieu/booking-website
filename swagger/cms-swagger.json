@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "https://cms.orionhms.com/api",
+      "url": "https://cms.bookinghms.com/api",
       "description": "Development server"
     }
   ],

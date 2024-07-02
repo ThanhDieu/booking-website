@@ -1,7 +1,7 @@
 # ------------------------------------------------------------ Pipeline------------------------------------------------------------
 kind: pipeline
 type: docker
-name: Orion.IBE
+name: Booking.IBE
 
 clone:
   disable: true
@@ -10,13 +10,13 @@ steps:
   - name: Clone
     image: alpine/git
     commands:
-    - git -c http.sslVerify=false clone -b $DRONE_COMMIT_BRANCH https://$${creds}@git.dision.office/Orion/orion.frontend.git
+    - git -c http.sslVerify=false clone -b $DRONE_COMMIT_BRANCH https://$${creds}@git.dision.office/Booking/booking.frontend.git
       
   - name: Prebuildd & Build Staging
     image: node:18-alpine
     commands:
-    - yarn --cwd orion.frontend install
-    - yarn --cwd orion.frontend build:dev
+    - yarn --cwd booking.frontend install
+    - yarn --cwd booking.frontend build:dev
     when:
       branch:
       - staging
@@ -25,8 +25,8 @@ steps:
   - name: Prebuildd & Build Prod
     image: node:18-alpine
     commands:
-    - yarn --cwd orion.frontend install
-    - yarn --cwd orion.frontend build:prod
+    - yarn --cwd booking.frontend install
+    - yarn --cwd booking.frontend build:prod
     when:
       branch:
       - main
@@ -34,19 +34,19 @@ steps:
   - name: Unit Test
     image: mcr.microsoft.com/playwright:v1.37.0-jammy
     commands:
-    - yarn --cwd orion.frontend test
+    - yarn --cwd booking.frontend test
 
   - name: Transfer to staging
     image: appleboy/drone-scp
     settings:
       host:
-        from_secret: orion-host-2
+        from_secret: booking-host-2
       username:
-        from_secret: orion-host-2-user
+        from_secret: booking-host-2-user
       password:
-        from_secret: orion-host-2-password
+        from_secret: booking-host-2-password
       target: /tmp/ibe
-      source: /drone/src/orion.frontend/out-development
+      source: /drone/src/booking.frontend/out-development
       strip_components: 3
     when:
       branch:
@@ -57,11 +57,11 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        from_secret: orion-host-2
+        from_secret: booking-host-2
       username:
-        from_secret: orion-host-2-user
+        from_secret: booking-host-2-user
       password:
-        from_secret: orion-host-2-password
+        from_secret: booking-host-2-password
       script:
         - /tmp/ibe.sync
     when:
@@ -77,8 +77,8 @@ steps:
         from_secret: netcup-host-user
       key:
         from_secret: netcup-key
-      source: /drone/src/orion.frontend/out
-      target: /data/shared/orion/frontend/ibe
+      source: /drone/src/booking.frontend/out
+      target: /data/shared/booking/frontend/ibe
       recursive: true
       delete: true
     when:
@@ -114,4 +114,4 @@ steps:
         from_secret: ntfy_password
 
 depends_on:
-  - Orion.IBE
+  - Booking.IBE

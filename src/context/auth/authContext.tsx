@@ -12,7 +12,7 @@ async function bootstrapAppData() {
 
   // refresh session token
   if (token?.sessionToken && token?.sessionId) {
-    const data = await auth.client("PATCH", `/orion/v1/sessions/${token.sessionId}`, { sessionToken: token.sessionToken });
+    const data = await auth.client("PATCH", `/booking/v1/sessions/${token.sessionId}`, { sessionToken: token.sessionToken });
     if (data?.sessionToken) {
       user = data;
     }

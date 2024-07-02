@@ -6,7 +6,7 @@
     "swagger": "2.0",
     "info": {
       "description": "APIs concern inventory",
-      "title": "Orion Inventory APIs",
+      "title": "Booking Inventory APIs",
       "termsOfService": "http://swagger.io/terms/",
       "contact": {
         "name": "API Support",
@@ -22,7 +22,7 @@
     "host": "192.168.1.184:5030",
     "basePath": "",
     "paths": {
-      "/orion/v1/admin/availability/v1/services": {
+      "/booking/v1/admin/availability/v1/services": {
         "get": {
           "description": "Get a list of all availability services in a property",
           "consumes": [
@@ -109,7 +109,7 @@
           }
         }
       },
-      "/orion/v1/admin/availability/v1/unit-groups": {
+      "/booking/v1/admin/availability/v1/unit-groups": {
         "get": {
           "description": "Get a list of all availability unit groups in a property",
           "consumes": [
@@ -221,7 +221,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/activities": {
+      "/booking/v1/admin/inventory/activities": {
         "get": {
           "description": "Get admin all activities",
           "consumes": [
@@ -299,7 +299,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/activities/{id}": {
+      "/booking/v1/admin/inventory/activities/{id}": {
         "get": {
           "description": "Get Admin Activity",
           "consumes": [
@@ -402,7 +402,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/attributes": {
+      "/booking/v1/admin/inventory/attributes": {
         "get": {
           "description": "Get all attributes",
           "consumes": [
@@ -452,7 +452,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/attributes/{id}": {
+      "/booking/v1/admin/inventory/attributes/{id}": {
         "get": {
           "description": "Get attribute by id",
           "consumes": [
@@ -529,7 +529,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/availability/v1/reservations/{id}/units": {
+      "/booking/v1/admin/inventory/availability/v1/reservations/{id}/units": {
         "get": {
           "description": "Get the list of available units for a specific reservation and time period.",
           "consumes": [
@@ -612,7 +612,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/availability/v1/units": {
+      "/booking/v1/admin/inventory/availability/v1/units": {
         "get": {
           "description": "Get a list of all availability units in a property",
           "consumes": [
@@ -679,7 +679,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/landscapes": {
+      "/booking/v1/admin/inventory/landscapes": {
         "get": {
           "description": "Get admin all landscape",
           "consumes": [
@@ -747,7 +747,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/landscapes/{id}": {
+      "/booking/v1/admin/inventory/landscapes/{id}": {
         "put": {
           "description": "Update landscape",
           "consumes": [
@@ -824,7 +824,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/properties": {
+      "/booking/v1/admin/inventory/properties": {
         "get": {
           "description": "Get admin all properties",
           "consumes": [
@@ -880,7 +880,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/properties/{id}": {
+      "/booking/v1/admin/inventory/properties/{id}": {
         "get": {
           "description": "Get admin property by id",
           "consumes": [
@@ -963,7 +963,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/special-bundles": {
+      "/booking/v1/admin/inventory/special-bundles": {
         "get": {
           "description": "Get admin all special bundles",
           "consumes": [
@@ -996,7 +996,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/tags": {
+      "/booking/v1/admin/inventory/tags": {
         "get": {
           "description": "Get all tags",
           "consumes": [
@@ -1111,7 +1111,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/tags/{id}": {
+      "/booking/v1/admin/inventory/tags/{id}": {
         "get": {
           "description": "Get Tag",
           "consumes": [
@@ -1221,7 +1221,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/unit-groups": {
+      "/booking/v1/admin/inventory/unit-groups": {
         "get": {
           "description": "Get all unit groups",
           "consumes": [
@@ -1340,7 +1340,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/unit-groups/{id}": {
+      "/booking/v1/admin/inventory/unit-groups/{id}": {
         "get": {
           "description": "Get unit group by id",
           "consumes": [
@@ -1456,7 +1456,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/units": {
+      "/booking/v1/admin/inventory/units": {
         "get": {
           "description": "Get all units",
           "consumes": [
@@ -1573,7 +1573,7 @@
           }
         }
       },
-      "/orion/v1/admin/inventory/units/{id}": {
+      "/booking/v1/admin/inventory/units/{id}": {
         "get": {
           "description": "Get unit by id",
           "consumes": [
@@ -1683,7 +1683,7 @@
           }
         }
       },
-      "/orion/v1/inventory/activities": {
+      "/booking/v1/inventory/activities": {
         "get": {
           "description": "Get all activities",
           "consumes": [
@@ -1726,7 +1726,7 @@
           }
         }
       },
-      "/orion/v1/inventory/activities/{id}": {
+      "/booking/v1/inventory/activities/{id}": {
         "get": {
           "description": "Get Activity",
           "consumes": [
@@ -1754,7 +1754,7 @@
           }
         }
       },
-      "/orion/v1/inventory/events": {
+      "/booking/v1/inventory/events": {
         "get": {
           "description": "Get all events",
           "consumes": [
@@ -1793,7 +1793,7 @@
           }
         }
       },
-      "/orion/v1/inventory/landscapes/{id}": {
+      "/booking/v1/inventory/landscapes/{id}": {
         "get": {
           "description": "Get Landscape",
           "consumes": [
@@ -1828,7 +1828,7 @@
           }
         }
       },
-      "/orion/v1/inventory/properties": {
+      "/booking/v1/inventory/properties": {
         "get": {
           "description": "Get all properties",
           "consumes": [
@@ -1877,7 +1877,7 @@
           }
         }
       },
-      "/orion/v1/inventory/properties/locations/search": {
+      "/booking/v1/inventory/properties/locations/search": {
         "get": {
           "description": "Get location",
           "consumes": [
@@ -1896,7 +1896,7 @@
           }
         }
       },
-      "/orion/v1/inventory/properties/{id}": {
+      "/booking/v1/inventory/properties/{id}": {
         "get": {
           "description": "Get property by id",
           "consumes": [
@@ -1930,7 +1930,7 @@
           }
         }
       },
-      "/orion/v1/inventory/special-bundles": {
+      "/booking/v1/inventory/special-bundles": {
         "get": {
           "description": "Get all special bundles",
           "consumes": [
@@ -1963,7 +1963,7 @@
           }
         }
       },
-      "/orion/v1/inventory/tags": {
+      "/booking/v1/inventory/tags": {
         "get": {
           "description": "Get all tags",
           "consumes": [

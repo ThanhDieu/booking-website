@@ -3,7 +3,7 @@
     "swagger": "2.0",
     "info": {
       "description": "APIs concern rate plan",
-      "title": "Orion Rate Plan APIs",
+      "title": "Booking Rate Plan APIs",
       "termsOfService": "http://swagger.io/terms/",
       "contact": {
         "name": "API Support",
@@ -19,7 +19,7 @@
     "host": "192.168.1.184:5032",
     "basePath": "",
     "paths": {
-      "/orion/v1/admin/rateplans": {
+      "/booking/v1/admin/rateplans": {
         "get": {
           "description": "Get rate plans",
           "consumes": [
@@ -82,7 +82,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/cancellation-policies": {
+      "/booking/v1/admin/rateplans/cancellation-policies": {
         "get": {
           "description": "Get cancellation policy",
           "consumes": [
@@ -179,7 +179,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/cancellation-policies/{id}": {
+      "/booking/v1/admin/rateplans/cancellation-policies/{id}": {
         "get": {
           "description": "Get cancellation policy by id",
           "consumes": [
@@ -214,7 +214,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/rate-by-day": {
+      "/booking/v1/admin/rateplans/rate-by-day": {
         "get": {
           "description": "Get Rate by day",
           "consumes": [
@@ -254,7 +254,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/rates": {
+      "/booking/v1/admin/rateplans/rates": {
         "get": {
           "description": "Get Rates",
           "consumes": [
@@ -311,7 +311,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/services": {
+      "/booking/v1/admin/rateplans/services": {
         "get": {
           "description": "Get admin services",
           "consumes": [
@@ -402,7 +402,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/services/{id}": {
+      "/booking/v1/admin/rateplans/services/{id}": {
         "get": {
           "description": "Get service by id",
           "consumes": [
@@ -479,7 +479,7 @@
           }
         }
       },
-      "/orion/v1/admin/rateplans/{id}": {
+      "/booking/v1/admin/rateplans/{id}": {
         "get": {
           "description": "Get rate plan by id",
           "consumes": [
@@ -514,7 +514,7 @@
           }
         }
       },
-      "/orion/v1/rateplans/no-show-policies": {
+      "/booking/v1/rateplans/no-show-policies": {
         "get": {
           "description": "Get no show policy",
           "consumes": [
@@ -611,7 +611,7 @@
           }
         }
       },
-      "/orion/v1/rateplans/no-show-policies/{id}": {
+      "/booking/v1/rateplans/no-show-policies/{id}": {
         "get": {
           "description": "Get no-show policy by id",
           "consumes": [
@@ -646,7 +646,7 @@
           }
         }
       },
-      "/orion/v1/rateplans/rates/calendar": {
+      "/booking/v1/rateplans/rates/calendar": {
         "get": {
           "description": "Get Rate Calendar",
           "consumes": [
@@ -691,7 +691,7 @@
           }
         }
       },
-      "/orion/v1/rateplans/services": {
+      "/booking/v1/rateplans/services": {
         "get": {
           "description": "Get services",
           "consumes": [
@@ -810,7 +810,7 @@
           }
         }
       },
-      "/orion/v1/rateplans/services/{id}": {
+      "/booking/v1/rateplans/services/{id}": {
         "delete": {
           "description": "Delete service",
           "consumes": [

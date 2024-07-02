@@ -19,15 +19,15 @@ import axiosHttp from '@/clientApi/http';
  *         description: Không tìm thấy người dùng.
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
-    try {
-      const response = await axiosHttp({
-          method: req.method,
-          data: req.body,
-          url: req.url?.replace('/api/orion/v1', '').replace(/\/$/, '').replace(/\/(?=\?)/, ''),
-        });
-        return res.status(200).json(response);
-    } catch(err) {
-      return res.status(500).json(err)
-    }
-    
+  try {
+    const response = await axiosHttp({
+      method: req.method,
+      data: req.body,
+      url: req.url?.replace('/api/booking/v1', '').replace(/\/$/, '').replace(/\/(?=\?)/, ''),
+    });
+    return res.status(200).json(response);
+  } catch (err) {
+    return res.status(500).json(err)
+  }
+
 }

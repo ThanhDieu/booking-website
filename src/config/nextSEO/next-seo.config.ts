@@ -2,10 +2,10 @@ import { DefaultSeoProps } from 'next-seo';
 
 const instance: DefaultSeoProps = {
   // openGraph: {
-  //   type: 'orion',
+  //   type: 'booking',
   //   locale: 'en_IE',
   //   url: 'https://www.url.ie/',
-  //   siteName: 'booking orion',
+  //   siteName: 'booking booking',
   // }
 
 };

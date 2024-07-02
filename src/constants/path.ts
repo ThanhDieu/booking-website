@@ -16,7 +16,7 @@ export const pathsTag = {
 };
 
 export const pathSocket = {
-  SOCKET_GET_PAYMENT: `wss://${process.env.NEXT_PUBLIC_SOCKET}/orion/v1/admin/hook/payment-socket/`,
+  SOCKET_GET_PAYMENT: `wss://${process.env.NEXT_PUBLIC_SOCKET}/booking/v1/admin/hook/payment-socket/`,
 };
 
 export const pathsBooking = {

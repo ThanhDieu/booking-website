@@ -10,7 +10,7 @@ import { localStorageKey } from '@/context/auth/authFunction';
 
 
 const serverHttp = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/orion/v1`,
+  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/booking/v1`,
 });
 
 serverHttp.interceptors.request.use((config) => {
@@ -24,10 +24,10 @@ serverHttp.interceptors.request.use((config) => {
 });
 
 serverHttp.interceptors.response.use(
-  async function(response: AxiosResponse) {
+  async function (response: AxiosResponse) {
     return response;
   },
-  function(error: AxiosError) {
+  function (error: AxiosError) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     return Promise.reject(error);

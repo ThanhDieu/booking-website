@@ -21,7 +21,7 @@ export default function AppProvider({ children }: AppProviderProps) {
         <ConfigProvider theme={defaultTheme}>
           <SWRConfigX>
             <AuthProvider>
-              <PlausibleProvider domain='ibe.orionhms.com'>
+              <PlausibleProvider domain='ibe.bookinghms.com'>
                 {children}
               </PlausibleProvider>
             </AuthProvider>

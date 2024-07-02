@@ -14,7 +14,7 @@ interface AdaptAxiosRequestConfig extends AxiosRequestConfig {
 }
 
 const http = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/orion/v1`,
+  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/booking/v1`,
   httpsAgent: new https.Agent({
     rejectUnauthorized: false,
   }),
@@ -23,10 +23,10 @@ const http = axios.create({
 
 
 http.interceptors.response.use(
-  function(response: AxiosResponse) {
+  function (response: AxiosResponse) {
     return response.data;
   },
-  function(error: AxiosError) {
+  function (error: AxiosError) {
 
     return Promise.reject(error);
   }

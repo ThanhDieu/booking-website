@@ -6,7 +6,7 @@
   "swagger": "2.0",
   "info": {
     "description": "APIs concern booking",
-    "title": "Orion Booking APIs",
+    "title": "Booking Booking APIs",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
       "name": "API Support",
@@ -22,7 +22,7 @@
   "host": "192.168.1.184:5031",
   "basePath": "",
   "paths": {
-    "/orion/v1/admin/bookings/activities": {
+    "/booking/v1/admin/bookings/activities": {
       "get": {
         "description": "Get all activities bookings",
         "consumes": [
@@ -105,7 +105,7 @@
         }
       }
     },
-    "/orion/v1/admin/bookings/activities/{id}": {
+    "/booking/v1/admin/bookings/activities/{id}": {
       "delete": {
         "description": "Delete activity booking",
         "consumes": [
@@ -140,7 +140,7 @@
         }
       }
     },
-    "/orion/v1/admin/bookings/bookers": {
+    "/booking/v1/admin/bookings/bookers": {
       "get": {
         "description": "Get all bookers",
         "consumes": [
@@ -196,7 +196,7 @@
         }
       }
     },
-    "/orion/v1/bookings": {
+    "/booking/v1/bookings": {
       "post": {
         "description": "Create booking",
         "consumes": [
@@ -232,7 +232,7 @@
         }
       }
     },
-    "/orion/v1/bookings/history": {
+    "/booking/v1/bookings/history": {
       "get": {
         "description": "Get bookings history",
         "consumes": [
@@ -282,7 +282,7 @@
         }
       }
     },
-    "/orion/v1/bookings/payments/currencies": {
+    "/booking/v1/bookings/payments/currencies": {
       "get": {
         "description": "Get payment currencies",
         "consumes": [
@@ -301,7 +301,7 @@
         }
       }
     },
-    "/orion/v1/bookings/payments/locations": {
+    "/booking/v1/bookings/payments/locations": {
       "get": {
         "description": "Get payment location",
         "consumes": [
@@ -320,7 +320,7 @@
         }
       }
     },
-    "/orion/v1/bookings/search": {
+    "/booking/v1/bookings/search": {
       "get": {
         "description": "Get bookings with lastName and bookingId",
         "consumes": [
